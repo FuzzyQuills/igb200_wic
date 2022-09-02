@@ -25,7 +25,7 @@ public class DragController : MonoBehaviour
     private void Update()
     {
         // If the mouse button is released and/or the player's finger leaves the touchscreen, drop the active tile.
-        if (isDragActive && (Input.GetMouseButtonDown(0) || (Input.touchCount >= 1 && Input.GetTouch(0).phase == TouchPhase.Ended)))
+        if (isDragActive && (Input.GetMouseButtonDown(0) || (Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Ended)))
         {
             Drop();
             return;
