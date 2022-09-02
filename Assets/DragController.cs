@@ -14,6 +14,7 @@ public class DragController : MonoBehaviour
     private void Awake()
     {
         // Checks for duplicate scripts like this and destroys them.
+        // Note added by Jean-Luc Mackail: Basically forces a single instance. bruh
         DragController[] controller = FindObjectsOfType<DragController>();
         if (controller.Length > 1)
         {
@@ -29,22 +30,24 @@ public class DragController : MonoBehaviour
             Drop();
             return;
         }
-        // Mouse
+        // Handle mouse input, if active. 
         if (Input.GetMouseButton(0))
         {
             Vector3 mousePos = Input.mousePosition;
             screenPosition = new Vector2(mousePos.x,mousePos.y);
         }
-        // Touchscreen
-        if (Input.touchCount > 0)
+        // Handle touchscreen input, if active. 
+        else if (Input.touchCount > 0)
         {
             screenPosition = Input.GetTouch(0).position;
         }
         else
         {
-            return; // stops all proceeding code from working if no touch is detected. efficient.
+            // Bail early; nothing to do.
+            return; 
         }
 
+        // Update tile dragging parameters. 
         worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
         if (isDragActive)
         {
@@ -64,15 +67,21 @@ public class DragController : MonoBehaviour
             }
         }
     }
+
+    // Initiates dragging a tile.
     void InitDrag()
     {
         lastDragged.lastPosition = lastDragged.transform.position;
         UpdateDragStatus(true);
     }
+
+    // Updates a dragged tile. 
     void Drag()
     {
         lastDragged.transform.position = new Vector2(worldPosition.x,worldPosition.y);
     }
+
+    // Drops a tile when all input events are released. 
     void Drop()
     {
         UpdateDragStatus(false);

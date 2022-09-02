@@ -13,8 +13,7 @@ public class Draggable : MonoBehaviour
     public Vector3 originalPos;
 
     private float movementTime = 15f;
-    private System.Nullable<Vector3> movementDestination;
-
+    private Vector3? movementDestination;
 
     public List<GameObject> objectsWithinRange;
     Transform targetObject;
