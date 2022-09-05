@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TileHolderScript : MonoBehaviour
+public class TileHolderScript : MonoBehaviour, IHolder
 {
     SpriteRenderer sR;
     public string tileName;
@@ -19,9 +19,9 @@ public class TileHolderScript : MonoBehaviour
         tileName = sR.sprite.name;
     }
     
-    public void UpdateOpened(bool booley)
+    public void UpdateOpened(bool Booley)
     {
-        opened = booley;
+        opened = Booley;
         if (opened)
         {
             sR.color = Color.gray;
