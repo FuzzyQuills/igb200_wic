@@ -9,10 +9,12 @@ using UnityEngine;
 [System.Serializable]
 public class TileInfo
 {
-    public bool occupied = false;
     public Vector2 coordinates;
+    
+    public bool tiled = false;
     public string tileName;
 
-
+    public bool noded = false;
+    public string nodeName;
 
 }

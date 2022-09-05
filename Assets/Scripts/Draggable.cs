@@ -18,6 +18,13 @@ public class Draggable : MonoBehaviour
     public List<GameObject> objectsWithinRange;
     Transform targetObject;
 
+    public IHolder daddy; // for the room tiles
+    TileInfo occupado = null; // The tile this draggable is on
+
+    /// <summary>
+    /// For getting the closest transform to this gameobject
+    /// </summary>
+    /// <returns></returns>
     public GameObject getClosestObject()
     {
         if (objectsWithinRange.Count > 0)
@@ -38,7 +45,7 @@ public class Draggable : MonoBehaviour
         }            
     }
 
-    public TileHolderScript daddy;
+ 
 
 
     private void Start()
@@ -101,18 +108,67 @@ public class Draggable : MonoBehaviour
 
     public void PlaceDown()
     {
-        if (getClosestObject() && !getClosestObject().GetComponent<bPosScript>().tileInfo.occupied)
+        if (getClosestObject()) // If there is a coordinate within this draggable's collider
         {
-            movementDestination = getClosestObject().transform.position;
-            getClosestObject().GetComponent<bPosScript>().tileInfo.occupied = true;
-            getClosestObject().GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;
+            GameObject target = getClosestObject();
+            if (tag == "Tile" && !target.GetComponent<bPosScript>().tileInfo.tiled) // If this draggable is a tile and the target position isn't occupied
+            {
+                movementDestination = target.transform.position;
+                target.GetComponent<bPosScript>().tileInfo.tiled = true;
+                target.GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;
+                occupado = target.GetComponent<bPosScript>().tileInfo;
+            }
+            else if (tag == "Node" && !target.GetComponent<bPosScript>().tileInfo.noded) // If this is a node and the target position isnt 'noded'
+            {
+                movementDestination = target.transform.position;
+                target.GetComponent<bPosScript>().tileInfo.noded = true;
+                target.GetComponent<bPosScript>().tileInfo.nodeName = gameObject.name;
+                occupado = target.GetComponent<bPosScript>().tileInfo;
+            }
+            else // Destroy object when conditions arent met
+            {
+                CleanDestroy();
+            }
         }
         else
         {
-            //movementDestination = originalPos;
-            daddy.UpdateOpened(false); // Reset the creator of this tile
-            Destroy(gameObject);
+            CleanDestroy();
         }
         
+    }
+
+    /// <summary>
+    /// If this draggable is on a tile, then clear that tile's info about this object
+    /// </summary>
+    public void EmptyTile()
+    {
+        if (occupado != null)
+        {
+            switch (tag)
+            {
+                case "Tile":
+                    occupado.tiled = false;
+                    occupado.tileName = null;
+                    break;
+                case "Node":
+                    occupado.noded = false;
+                    occupado.nodeName = null;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Destroy the draggable and update its Iholder if possible.
+    /// </summary>
+    void CleanDestroy(bool Bool = false)
+    {
+        daddy?.UpdateOpened(Bool);
+        EmptyTile();
+        
+        
+        Destroy(gameObject);
     }
 }

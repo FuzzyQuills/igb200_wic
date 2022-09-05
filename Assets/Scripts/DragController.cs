@@ -72,6 +72,7 @@ public class DragController : MonoBehaviour
     void InitDrag()
     {
         lastDragged.lastPosition = lastDragged.transform.position;
+        lastDragged.EmptyTile();
         UpdateDragStatus(true);
     }
 

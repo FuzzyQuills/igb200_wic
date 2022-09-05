@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7318534602118517503}
   m_Layer: 0
   m_Name: tileS4
-  m_TagString: Untagged
+  m_TagString: Tile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   originalPos: {x: 0, y: 0, z: 0}
   objectsWithinRange: []
+  daddy: {fileID: 0}
 --- !u!61 &7318534602118517500
 BoxCollider2D:
   m_ObjectHideFlags: 0

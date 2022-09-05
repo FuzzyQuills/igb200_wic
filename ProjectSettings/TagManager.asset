@@ -6,6 +6,8 @@ TagManager:
   tags:
   - DroppableArea
   - TileHolder
+  - Node
+  - Tile
   layers:
   - Default
   - TransparentFX

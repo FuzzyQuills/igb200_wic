@@ -18,7 +18,7 @@ public class BuildingSpawner : MonoBehaviour
             for (int i = 0; i < tIC.tiles.Count; i++)
             {
                 TileInfo t = tIC.tiles[i];
-                if (t.occupied)
+                if (t.tiled)
                 {
                     GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x,0.5f,-t.coordinates.y), Quaternion.identity);
                 }
