@@ -15,7 +15,7 @@ public class BlueprintComponents : MonoBehaviour
 
     private void Start()
     {
-        zoop();
+        //zoop();
     }
 
     /// <summary>
