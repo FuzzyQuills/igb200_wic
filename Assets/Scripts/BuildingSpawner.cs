@@ -15,14 +15,26 @@ public class BuildingSpawner : MonoBehaviour
     {
         if (tIC)
         {
-            for (int i = 0; i < tIC.tiles.Count; i++)
+            //for (int i = 0; i < tIC.tiles.Count; i++)
+            //{
+            //    TileInfo t = tIC.tiles[i];
+            //    if (t.tiled)
+            //    {
+            //        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x,0.5f,-t.coordinates.y), Quaternion.identity);
+            //    }
+            //}
+            for (int i = 0; i < tIC.nestedList.Count; i++)
             {
-                TileInfo t = tIC.tiles[i];
-                if (t.tiled)
+                for (int j = 0; j < tIC.nestedList[i].tile.Count; j++)
                 {
-                    GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x,0.5f,-t.coordinates.y), Quaternion.identity);
+                    TileInfo t = tIC.nestedList[i].tile[j];
+                    if (t.tiled)
+                    {
+                        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x, 0.3f + (i * 0.7f), -t.coordinates.y), Quaternion.identity);
+                    }
                 }
             }
+
         }
     }
 }

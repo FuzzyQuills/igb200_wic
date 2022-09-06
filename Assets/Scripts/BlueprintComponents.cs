@@ -9,19 +9,22 @@ using UnityEngine.UI;
 /// </summary>
 public class BlueprintComponents : MonoBehaviour
 {
-
     bool tilesOrNodes = false; // 0=tiles, 1=nodes
     public GameObject[] holders; // Holds the TileHolder and NodeHolder interfaces for enabling/disabling
+
+    public TMP_Text throwaway; // for alpha Emily's text bubble.
+
 
     private void Start()
     {
         //zoop();
+        throwaway.text = $"You are on level {GameObject.FindObjectOfType<TileInfoCollector>().currentLevel}.<br>Nice!";
     }
 
     /// <summary>
-    /// Hide one interface type when the other is active
+    /// Hide and disable one interface type when the other is active
     /// </summary>
-    public void zoop()
+    public void SwitchInterface()
     {
         tilesOrNodes = !tilesOrNodes;
 
@@ -35,6 +38,14 @@ public class BlueprintComponents : MonoBehaviour
         {
             holders[1].SetActive(false);
             holders[0].SetActive(true);
-        }
+        }        
+    }
+
+    /// <summary>
+    /// Because Codeman becomes disconnected from the scene, buttons must use this function to save
+    /// </summary>
+    public void Save()
+    {
+        GameObject.FindObjectOfType<TileInfoCollector>().SaveTiles();
     }
 }
