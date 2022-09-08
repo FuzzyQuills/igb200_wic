@@ -9,6 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4519001430741368064}
+  - component: {fileID: 6268478736766553910}
+  - component: {fileID: 5012509995994195610}
   m_Layer: 0
   m_Name: PipeL
   m_TagString: Untagged
@@ -32,6 +34,48 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6268478736766553910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890379415265372090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb56356eed6db74e83068e37ee819d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateEnabled: 1
+  stateRenderer: {fileID: 927222059550899357}
+  state: 0
+  directions: 00010100
+--- !u!61 &5012509995994195610
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3890379415265372090}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &6979218928330023014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -111,6 +155,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3fdcbc0ebfd61f54e94d3a85d15b2137, type: 3}
+--- !u!23 &927222059550899357 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1439730007547781893, guid: 3fdcbc0ebfd61f54e94d3a85d15b2137,
+    type: 3}
+  m_PrefabInstance: {fileID: 6979218928330023014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7444894241625884557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3fdcbc0ebfd61f54e94d3a85d15b2137,
