@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlumbingGame : MonoBehaviour
 {
-    public int x = 4, y = 4; // Must be even.
+    public int gridX = 4, gridY = 4; // Must be even.
     public float scale = 1f; // changes size of tiles
     public List<PipeData> pipes = new List<PipeData>();
 
@@ -12,25 +13,34 @@ public class PlumbingGame : MonoBehaviour
     public GameObject[] generates; // A list of pipe gameobjects to be spawned from.
 
     TileInfoCollector codeMan;
+    GameData gd;
 
     private void Start()
     {
+        // Game Data stuff
+        gd = GameObject.FindObjectOfType<GameData>();
+        if (gd)
+        {
+            gd.expenditure = 0;
+        }        
+
+        // Tile Info Collector stuff
         codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
         if (codeMan != null)
         {
-            x = x + codeMan.currentLevel * 2;
-            y = y + codeMan.currentLevel * 2;
+            gridX = gridX + codeMan.currentLevel * 2;
+            gridY = gridY + codeMan.currentLevel * 2;
             scale = scale + (codeMan.currentLevel * 0.45f); // Should be 0.5f for an even, infinite division
         }
 
 
-        for (int i = 0; i < x; i++)
+        for (int i = 0; i < gridX; i++)
         {
-            for (int j = 0; j < y; j++)
+            for (int j = 0; j < gridY; j++)
             {
                 int r = Random.Range(0,generates.Length);
                 GameObject g = Instantiate(generates[r], transform);
-                g.transform.position = new Vector3(i+0.5f - (x / 2), -(j+0.5f - (y / 2)), 0) / scale;
+                g.transform.position = new Vector3(i+0.5f - (gridX / 2), -(j+0.5f - (gridY / 2)), 0) / scale;
                 g.transform.localScale = Vector3.one * 0.95f / scale;
 
                 
@@ -46,10 +56,10 @@ public class PlumbingGame : MonoBehaviour
 
 
         GameObject start = Instantiate(Resources.Load("Pipes/PipeStart") as GameObject, transform);
-        start.transform.position = new Vector3(0.5f - (x/2), y+0.5f - (y/2), 0) / scale;
+        start.transform.position = new Vector3(0.5f - (gridX/2), gridY+0.5f - (gridY/2), 0) / scale;
         start.transform.localScale = Vector3.one * 0.95f / scale;
         GameObject end =  Instantiate(Resources.Load("Pipes/PipeEnd") as GameObject, transform);
-        end.transform.position = new Vector3(x-0.5f - (x/2), -0.5f - (y/2), 0) / scale;
+        end.transform.position = new Vector3(gridX-0.5f - (gridX/2), -0.5f - (gridY/2), 0) / scale;
         end.transform.localScale = Vector3.one * 0.95f / scale;
 
         for (int i = 0; i < pipes.Count; i++)
@@ -57,8 +67,7 @@ public class PlumbingGame : MonoBehaviour
             GiveNeihbours(pipes[i]);
         }
 
-
-        UpdateStuff();
+        Invoke("UpdateStuff", 0.1f);
     }
 
     
@@ -85,19 +94,30 @@ public class PlumbingGame : MonoBehaviour
                 }             
             }
 
-            if (p.pos == new Vector2(x - 1, y - 1))
+            if (p.pos == new Vector2(gridX - 1, gridY - 1))
             {                
                 if (p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
-                {
+                {                    
+                    // Display win message
                     Debug.Log("Win!");
+                    GameObject.Find("Squibble").GetComponent<TMP_Text>().text = "You Win!";
+                    // Reward finances
+                    if (gd)
+                    {
+                        gd.expenditure += (int)(25 * 9 * 1.5f); // Reward assumed on 9 tiles at 3 stars. To Be Updated
+                    }
+                    // Disable interactions with pipes, make connecting pipes blue
                     foreach (PipeData pp in pipes)
                     {
+                        pp.pipeScript.interactive = false;
                         if (pp.pipeScript.state == 1)
                         {
-                            pp.pipeScript.UpdateState(2);
+                            pp.pipeScript.UpdateState(2);                            
                         }
                     }
+                    break;
                 }
+                
             }
         }
     }

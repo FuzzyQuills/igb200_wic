@@ -45,10 +45,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bbb56356eed6db74e83068e37ee819d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPD:
+    pipe: {fileID: 0}
+    pos: {x: -1000, y: -1000}
+    pipeScript: {fileID: 0}
+    neighbours: []
   rotateEnabled: 0
   stateRenderer: {fileID: 5219226335309248741}
   state: 2
   directions: 01000000
+  interactive: 1
 --- !u!1001 &5170886561892897628
 PrefabInstance:
   m_ObjectHideFlags: 0

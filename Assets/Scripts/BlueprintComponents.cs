@@ -47,5 +47,6 @@ public class BlueprintComponents : MonoBehaviour
     public void Save()
     {
         GameObject.FindObjectOfType<TileInfoCollector>().SaveTiles();
+        GameObject.FindObjectOfType<GameData>().SaveMoney();
     }
 }

@@ -36,7 +36,7 @@ public class TileHolderScript : MonoBehaviour, IHolder
     {
         if (!opened)
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             GameObject g = Instantiate(Resources.Load($"Draggables/{tileName}") as GameObject, transform.position, Quaternion.identity);
             g.GetComponent<Draggable>().daddy = this;
             g.name = tileName;

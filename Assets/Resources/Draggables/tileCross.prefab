@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: b2cb512ab07e49a43a8dc4c3dd8cead4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   originalPos: {x: 0, y: 0, z: 0}
   objectsWithinRange: []
-  daddy: {fileID: 0}
+  price: -130
 --- !u!61 &7318534602118517500
 BoxCollider2D:
   m_ObjectHideFlags: 0

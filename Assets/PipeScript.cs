@@ -20,7 +20,7 @@ public class PipeScript : MonoBehaviour
 
     public bool[] directions = new bool[4];
 
-
+    public bool interactive = true;
 
 
 
@@ -30,7 +30,7 @@ public class PipeScript : MonoBehaviour
         int r = Random.Range(0,3);
         for (int i = 0; i < r; i++)
         {
-            ChangeDirection();
+            ChangeDirection(false);
         }
 
     }
@@ -57,17 +57,23 @@ public class PipeScript : MonoBehaviour
 
     // Rotate when touched
     private void OnMouseDown()
-    {        
-        ChangeDirection();
+    {
+        if (interactive)
+        {
+            ChangeDirection(true);
+        }        
     }
 
-    void ChangeDirection()
+    void ChangeDirection(bool Bool)
     {
         if (rotateEnabled)
         {
             transform.Rotate(Vector3.forward, 90);
             directions = Shift(directions);
-            GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
+            if (Bool)
+            {
+                GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
+            }            
         }        
     }
 

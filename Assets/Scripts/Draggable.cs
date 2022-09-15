@@ -21,6 +21,8 @@ public class Draggable : MonoBehaviour
     public IHolder daddy; // for the room tiles
     TileInfo occupado = null; // The tile this draggable is on
 
+    public int price = 0; // Price of this draggable object.
+
     /// <summary>
     /// For getting the closest transform to this gameobject
     /// </summary>
@@ -110,7 +112,7 @@ public class Draggable : MonoBehaviour
     {
         if (getClosestObject()) // If there is a coordinate within this draggable's collider
         {
-            GameObject target = getClosestObject();
+            GameObject target = getClosestObject();            
             if (tag == "Tile" && !target.GetComponent<bPosScript>().tileInfo.tiled) // If this draggable is a tile and the target position isn't occupied
             {
                 movementDestination = target.transform.position;
@@ -123,7 +125,7 @@ public class Draggable : MonoBehaviour
                 movementDestination = target.transform.position;
                 target.GetComponent<bPosScript>().tileInfo.noded = true;
                 target.GetComponent<bPosScript>().tileInfo.nodeName = gameObject.name;
-                occupado = target.GetComponent<bPosScript>().tileInfo;
+                occupado = target.GetComponent<bPosScript>().tileInfo;                
             }
             else // Destroy object when conditions arent met
             {
@@ -165,7 +167,13 @@ public class Draggable : MonoBehaviour
     /// </summary>
     void CleanDestroy(bool Bool = false)
     {
+        Debug.Log("a");        
+
         daddy?.UpdateOpened(Bool);
+
+        
+        
+        
         EmptyTile();
         
         
