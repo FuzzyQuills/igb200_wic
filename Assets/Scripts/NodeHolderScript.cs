@@ -11,17 +11,25 @@ public class NodeHolderScript : MonoBehaviour, IHolder
     public int nodesPlaced = 0;
     public TMP_Text countText;
 
-    bool enable = true;
+    public bool nodeEnable = true;
 
     public void UpdateOpened(bool Booley)
     {
         nodesPlaced--;
-        enable = true;
+        nodeEnable = true;
+    }
+
+    void Start()
+    {
+        if (nodesMax == 0)
+        {
+            nodeEnable = false;
+        }
     }
 
     private void OnMouseDown()
     {
-        if (enable)
+        if (nodeEnable)
         {
             Debug.Log("B");
             GameObject g = Instantiate(Resources.Load($"Draggables/{nodeName}") as GameObject, transform.position, Quaternion.identity);
@@ -31,7 +39,7 @@ public class NodeHolderScript : MonoBehaviour, IHolder
             nodesPlaced++;
             if (nodesMax == nodesPlaced) // Disable this function if all tiles are placed
             {
-                enable = false;
+                nodeEnable = false;
             }
         }
     }
