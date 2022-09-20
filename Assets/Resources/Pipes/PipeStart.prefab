@@ -56,6 +56,7 @@ MonoBehaviour:
   state: 2
   directions: 00000100
   interactive: 1
+  mysteryCube: {fileID: 0}
 --- !u!61 &8580881916260562804
 BoxCollider2D:
   m_ObjectHideFlags: 0

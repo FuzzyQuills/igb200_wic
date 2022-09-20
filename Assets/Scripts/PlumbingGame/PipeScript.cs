@@ -22,7 +22,7 @@ public class PipeScript : MonoBehaviour
 
     public bool interactive = true;
 
-
+    public GameObject mysteryCube = null;
 
     private void Start()
     {
@@ -58,6 +58,11 @@ public class PipeScript : MonoBehaviour
     // Rotate when touched
     private void OnMouseDown()
     {
+        if (mysteryCube != null)
+        {
+            Destroy(mysteryCube);
+            GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
+        } else
         if (interactive)
         {
             ChangeDirection(true);

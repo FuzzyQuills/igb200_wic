@@ -24,14 +24,14 @@ public class PlumbingGame : MonoBehaviour
             gd.expenditure = 0;
         }        
 
-        // Tile Info Collector stuff
-        codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
-        if (codeMan != null)
-        {
-            gridX = gridX + codeMan.currentLevel * 2;
-            gridY = gridY + codeMan.currentLevel * 2;
-            scale = scale + (codeMan.currentLevel * 0.45f); // Should be 0.5f for an even, infinite division
-        }
+        //// Script for scaling the game's pipes and size
+        //codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
+        //if (codeMan != null)
+        //{
+        //    gridX = gridX + codeMan.currentLevel * 2;
+        //    gridY = gridY + codeMan.currentLevel * 2;
+        //    scale = scale + (codeMan.currentLevel * 0.45f); // Should be 0.5f for an even, infinite division
+        //}
 
 
         for (int i = 0; i < gridX; i++)
@@ -128,6 +128,10 @@ public class PlumbingGame : MonoBehaviour
     /// </summary>
     public void Infect(PipeData pD)
     {
+        if (pD.pipeScript.mysteryCube != null)
+        {
+            return;
+        }
         //North
         if (pD.neighbours[0]?.state == 0 && pD.neighbours[0].directions[2] == true)
         {
