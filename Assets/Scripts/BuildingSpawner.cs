@@ -30,7 +30,7 @@ public class BuildingSpawner : MonoBehaviour
                     TileInfo t = tIC.nestedList[i].tile[j];
                     if (t.tiled)
                     {
-                        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x, 0.3f + (i * 0.7f), -t.coordinates.y), Quaternion.identity);
+                        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(t.coordinates.x, (i * 0.7f), -t.coordinates.y), Quaternion.identity);
                     }
                 }
             }

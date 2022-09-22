@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Simulator
+  m_Title: Console
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 1966
+  controlID: 17
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: CohanMobile
+  m_LastLoadedLayoutName: 
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 200}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 1965
+  controlID: 155
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -271,8 +271,8 @@ MonoBehaviour:
     y: 0
     width: 462
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -298,8 +298,8 @@ MonoBehaviour:
     y: 0
     width: 324
     height: 947
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -424,7 +424,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: aa04f8ffb204f8ff2a06f8ffdc09f8ffbca5f8ffc4a5f8ff3ca7f8ff24b8f8ff2cb8f8fff2bff8ff42f9f8ff5a6ff9ffd2c4f9ff58d6f9ff8ad6f9ff90d7f9ffd2d8f9ff24daf9ff6cdef9ff74def9ff7ae0f9ffc8e4f9ff98e6f9ff16e8f9ff0c00faffb606faff4008faff100afaffa028faff064dfaff444efaffce4ffaff3c89faff60f6faffdcf7faff0a17fbfff225fbfff826fbffc828fbff082afbff0a44fbffbe45fbffc847fbffd44efbff865efbff2a77fbff3a77fbff4277fbffb878fbff4a6bfcfff085fcff76dafcff44fdfcff6a17fdff4c24fdffe03dfdff8a3ffdff5447fdffd84cfdffca87fdff4889fdff4809ffff5c0bffff680cffff3612ffff8e18ffff7883ffff66f1fffffcf6ffff24fbfffff4ffffff0271000010710000287100005e710000ea71000084720000d2720000e27200006e730000dc730000447400002e9f0000709f0000909f0000eaa00000fea00000bea100005ea700004ea9000046aa00009eaa0000f80e0100120f0100780f0100641001001211010034110100ec1101008a3c0100183d01001e410100764101003899010030a201004aa20100cca60100b8ab010092b90100485f02007464020078640200bec20200e2c20200daea02001a4a0300
+      m_ExpandedIDs: 24fbffffba6d0000006e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -532,22 +532,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Textures/Tiles
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Textures/Tiles
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\cgoet\Documents\GitHub\igb200_wic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 9a700000
-    m_LastClickedID: 28826
-    m_ExpandedIDs: 000000005e7000006070000062700000647000006670000000ca9a3b
+    m_SelectedIDs: 58720000
+    m_LastClickedID: 29272
+    m_ExpandedIDs: 00000000e2710000e4710000e6710000e8710000ea7100003272000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -563,7 +563,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 10}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -575,7 +575,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000005e7000006070000062700000647000006670000000ca9a3b
+    m_ExpandedIDs: 00000000e2710000e4710000e6710000e8710000ea710000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +603,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: ce8d0000846f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -731,7 +731,7 @@ MonoBehaviour:
       floating: 0
       collapsed: 0
       displayed: 1
-      snapOffset: {x: 0, y: 0}
+      snapOffset: {x: 0, y: 25}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       id: unity-transform-toolbar
@@ -874,14 +874,14 @@ MonoBehaviour:
   m_OverrideSceneCullingMask: 6917529027641081856
   m_SceneIsLit: 1
   m_SceneLighting: 1
-  m_2DMode: 1
+  m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.17560628, y: -2.5763516, z: -0.016976727}
+    m_Target: {x: 4.387358, y: -0.20218368, z: -2.3189125}
     speed: 2
-    m_Value: {x: 0.17560628, y: -2.5763516, z: -0.016976727}
+    m_Value: {x: 4.387358, y: -0.20218368, z: -2.3189125}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -910,17 +910,17 @@ MonoBehaviour:
       m_Size: {x: 0, y: 0}
     yGrid:
       m_Fade:
-        m_Target: 0
+        m_Target: 1
         speed: 2
-        m_Value: 0
+        m_Value: 1
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
     zGrid:
       m_Fade:
-        m_Target: 1
+        m_Target: 0
         speed: 2
-        m_Value: 1
+        m_Value: 0
       m_Color: {r: 0.5, g: 0.5, b: 0.5, a: 0.4}
       m_Pivot: {x: 0, y: 0, z: 0}
       m_Size: {x: 1, y: 1}
@@ -928,17 +928,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.12690695, y: -0.837311, z: 0.220653, w: 0.4839092}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: 0.1265726, y: -0.83801454, z: 0.22083747, w: 0.4826404}
   m_Size:
-    m_Target: 4.072402
+    m_Target: 3.4955416
     speed: 2
-    m_Value: 4.072402
+    m_Value: 3.4955416
   m_Ortho:
-    m_Target: 1
+    m_Target: 0
     speed: 2
-    m_Value: 1
+    m_Value: 0
   m_CameraSettings:
     m_Speed: 1
     m_SpeedNormalized: 0.5
@@ -952,7 +952,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
+  m_LastSceneViewRotation: {x: -0.0117942495, y: 0.9712924, z: -0.23244579, w: -0.049290597}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

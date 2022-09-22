@@ -89,7 +89,8 @@ public class BlueprintComponents : MonoBehaviour
                         //Debug.Log($"Tile '{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}' placed at {b.tileInfo.coordinates}");
                         GameObject g = Instantiate(Resources.Load($"Draggables/{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}") as GameObject, b.transform);
 
-                        g.GetComponent<Renderer>().material.color = new Color32(55, 232, 132, 100);
+                        g.GetComponent<Renderer>().material.color = new Color(0,0,0,0.3f);  //new Color32(55, 232, 132, 100);
+                        g.GetComponent<Renderer>().sortingOrder = 0;
                         Destroy(g.GetComponent<Collider2D>());
                         Destroy(g.GetComponent<Draggable>());
                     }
