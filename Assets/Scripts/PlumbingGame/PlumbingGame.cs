@@ -25,7 +25,7 @@ public class PlumbingGame : MonoBehaviour
         }        
 
         //// Script for scaling the game's pipes and size
-        //codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
+        codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
         //if (codeMan != null)
         //{
         //    gridX = gridX + codeMan.currentLevel * 2;
@@ -66,6 +66,22 @@ public class PlumbingGame : MonoBehaviour
         {
             GiveNeihbours(pipes[i]);
         }
+
+
+        // Delete some boxes around pipes. Amount reduces with game level.
+        for (int i = 0; i < 10 - codeMan.currentLevel; i++)
+        {
+            while (true)
+            {
+                int a = Random.Range(0, pipes.Count);
+                if (pipes[a].pipeScript.mysteryCube != null)
+                {
+                    Destroy(pipes[a].pipeScript.mysteryCube);
+                    break;
+                }
+            }
+        }
+
 
         Invoke("UpdateStuff", 0.1f);
     }

@@ -6,6 +6,9 @@ public class BuildingSpawner : MonoBehaviour
 {
     TileInfoCollector tIC = null;
 
+
+    public GameObject buildingHolder;
+
     private void Awake()
     {
         tIC = FindObjectOfType<TileInfoCollector>();
@@ -31,10 +34,15 @@ public class BuildingSpawner : MonoBehaviour
                     if (t.tiled)
                     {
                         GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(t.coordinates.x, (i * 0.7f), -t.coordinates.y), Quaternion.identity);
+                        g.transform.parent = buildingHolder.transform;
                     }
                 }
             }
-
         }
+    }
+
+    private void Update()
+    {
+        buildingHolder.transform.Rotate(Vector3.up, 15 * Time.deltaTime);
     }
 }
