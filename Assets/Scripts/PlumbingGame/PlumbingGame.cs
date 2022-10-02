@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlumbingGame : MonoBehaviour
 {
@@ -15,17 +16,32 @@ public class PlumbingGame : MonoBehaviour
     TileInfoCollector codeMan;
     GameData gd;
 
+    int stars = 5;
+    public float maxTime = 15;
+    float currentTime = 15;
+    bool timerStopper = false;
+    public Slider timerSlider;
+    public TMP_Text starText;
+    public TMP_Text winText;
+
     private void Start()
     {
         // Game Data stuff
         gd = GameObject.FindObjectOfType<GameData>();
+        codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
+        
         if (gd)
         {
-            gd.expenditure = 0;
-        }        
+            gd.expenditure = 0;            
+        }
+        if (codeMan)
+        {
+            maxTime = maxTime - codeMan.currentLevel;
+        }
+       
 
         //// Script for scaling the game's pipes and size
-        codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
+        
         //if (codeMan != null)
         //{
         //    gridX = gridX + codeMan.currentLevel * 2;
@@ -82,11 +98,29 @@ public class PlumbingGame : MonoBehaviour
             }
         }
 
+        currentTime = maxTime;
+        timerSlider.maxValue = maxTime;
+        timerSlider.value = currentTime;
 
         Invoke("UpdateStuff", 0.1f);
     }
 
-    
+    private void Update()
+    {
+        if (stars > 1 && !timerStopper)
+        {
+            currentTime -= Time.deltaTime;
+            timerSlider.value = currentTime;
+            if (currentTime <= 0)
+            {
+                stars--;
+                starText.text = $"{stars} stars";
+                currentTime = maxTime;
+            }
+        }        
+    }
+
+
     /// <summary>
     /// Reverts all pipes to state zero and then 'reinfects' valid pipes. Also called in PipeScript whenever a pipe is turned.
     /// </summary>
@@ -110,17 +144,21 @@ public class PlumbingGame : MonoBehaviour
                 }             
             }
 
+            // Win Condition
             if (p.pos == new Vector2(gridX - 1, gridY - 1))
             {                
                 if (p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
-                {                    
+                {
                     // Display win message
+                    timerStopper = true; // Stop timer
                     Debug.Log("Win!");
                     GameObject.Find("Squibble").GetComponent<TMP_Text>().text = "You Win!";
+                    winText.text = $"{stars} Stars!<br><color=green>{(int)(20 * 9 * (0.5 + (0.2 * stars)))}k awarded!";
                     // Reward finances
+                    gd = GameObject.FindObjectOfType<GameData>();
                     if (gd)
                     {
-                        gd.expenditure += (int)(25 * 9 * 1.5f); // Reward assumed on 9 tiles at 3 stars. To Be Updated
+                        gd.expenditure += (int)(20 * 9 * (0.5 + (0.2 * stars))); // Reward assumed on 9 tiles at 3 stars. To Be Updated
                     }
                     // Disable interactions with pipes, make connecting pipes blue
                     foreach (PipeData pp in pipes)
@@ -216,7 +254,10 @@ public class PlumbingGame : MonoBehaviour
         }
     }
 
+    void Win()
+    {
 
+    }
 }
 
 [System.Serializable]

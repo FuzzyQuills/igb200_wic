@@ -31,7 +31,7 @@ public class NodeHolderScript : MonoBehaviour, IHolder
     {
         if (nodeEnable)
         {
-            Debug.Log("B");
+            //Debug.Log("B");
             GameObject g = Instantiate(Resources.Load($"Draggables/{nodeName}") as GameObject, transform.position, Quaternion.identity);
             g.GetComponent<Draggable>().daddy = this;
             g.name = nodeName;

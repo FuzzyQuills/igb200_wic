@@ -16,5 +16,4 @@ public class TileInfo
 
     public bool noded = false;
     public string nodeName;
-
 }

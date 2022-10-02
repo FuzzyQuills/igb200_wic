@@ -15,6 +15,7 @@ public class BlueprintComponents : MonoBehaviour
 
     public TMP_Text throwaway; // for alpha Emily's text bubble.
 
+    public TMP_Text nodeText;
 
     private void Start()
     {
@@ -22,6 +23,23 @@ public class BlueprintComponents : MonoBehaviour
         throwaway.text = $"You are on level {GameObject.FindObjectOfType<TileInfoCollector>().currentLevel}.<br>Nice!";
 
         HighlightFormerTiles();
+
+        // Dont ask.
+        GameObject.FindObjectOfType<GameData>().shit = true;
+    }
+
+    private void Update()
+    {
+        GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+        int count = 0;
+        for (int i = 0; i < nodes.Length; i++)
+        {
+            count += nodes[i].GetComponent<Draggable>().nodeStrength;
+        }
+        nodeText.text = $"Potential Reward:<br>${(count * 20) * 0.7f}k to ${(count * 20) * 1.5f}k";
+
+        
+
     }
 
     /// <summary>
@@ -87,9 +105,12 @@ public class BlueprintComponents : MonoBehaviour
                     if (b.tileInfo.coordinates == tIC.nestedList[tIC.currentLevel - 1].tile[i].coordinates) // Once again man what a stroke of a code.
                     {
                         //Debug.Log($"Tile '{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}' placed at {b.tileInfo.coordinates}");
-                        GameObject g = Instantiate(Resources.Load($"Draggables/{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}") as GameObject, b.transform);
-
-                        g.GetComponent<Renderer>().material.color = new Color(0,0,0,0.3f);  //new Color32(55, 232, 132, 100);
+                        GameObject g = Instantiate(Resources.Load($"Draggables/{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}") as GameObject, b.transform.position, Quaternion.identity);
+                        EnshadowTiles(b,g.GetComponent<Draggable>());
+                        
+                        g.layer = (int)LayerMask.NameToLayer("Ignore Raycast");
+                        g.tag = "Untagged";
+                        g.GetComponent<Renderer>().material.color = new Color(0,0,0,0.8f);  //new Color32(55, 232, 132, 100);
                         g.GetComponent<Renderer>().sortingOrder = 0;
                         Destroy(g.GetComponent<Collider2D>());
                         Destroy(g.GetComponent<Draggable>());
@@ -99,5 +120,20 @@ public class BlueprintComponents : MonoBehaviour
         }
     }
 
+
+    void EnshadowTiles(bPosScript bPos, Draggable d)
+    {
+        bPos.shadowed = true;
+        for (int i = 0; i < d.AdditionalPositions.Length; i++)
+        {
+            foreach (bPosScript b in GameObject.FindObjectsOfType<bPosScript>())
+            {
+                if (b.tileInfo.coordinates == bPos.tileInfo.coordinates + d.AdditionalPositions[i])
+                {
+                    b.shadowed = true;
+                }
+            }
+        }        
+    }
 
 }

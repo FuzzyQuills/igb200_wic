@@ -21,6 +21,8 @@ public class GameData : MonoBehaviour
 
     public List<int> moneyChanges = new List<int>(); // Records of all times the amount of money has changed between scenes. For the inspection phase.
 
+    public bool shit = true;
+
 
     private void Awake()
     {
@@ -77,18 +79,21 @@ public class GameData : MonoBehaviour
     /// Changes the money UI to whatever the current money-to-expenditure for the scene is.
     /// </summary>
     public void UpdateMoneyUI()
-    {      
+    {
 
-        // Get all the draggables in the scene and figure out their whole cost
-        dragsInScene = GameObject.FindObjectsOfType<Draggable>();
-        if (dragsInScene.Length > 0)
+        if (shit)
         {
-            expenditure = 0;
-            for (int i = 0; i < dragsInScene.Length; i++)
+            // Get all the draggables in the scene and figure out their whole cost
+            dragsInScene = GameObject.FindObjectsOfType<Draggable>();
+            if (dragsInScene.Length > 0)
             {
-                expenditure += dragsInScene[i].price;
+                expenditure = 0;
+                for (int i = 0; i < dragsInScene.Length; i++)
+                {
+                    expenditure += dragsInScene[i].price;
+                }
             }
-        }
+        }       
 
 
         if (expenditure == 0) // Only shows the money if there's not expenditure
@@ -121,6 +126,8 @@ public class GameData : MonoBehaviour
         moneyChanges.Add(expenditure);
 
         money += expenditure;
+
+        shit = false;
         expenditure = 0;
     }
 

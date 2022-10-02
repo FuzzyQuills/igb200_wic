@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7318534602118517501}
   - component: {fileID: 7318534602118517474}
   - component: {fileID: 7318534602118517475}
-  - component: {fileID: 7318534602118517500}
   - component: {fileID: 7318534602118517503}
+  - component: {fileID: 9200059477360556751}
   m_Layer: 0
   m_Name: tileCross
   m_TagString: Tile
@@ -103,33 +103,19 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   originalPos: {x: 0, y: 0, z: 0}
   objectsWithinRange: []
-  price: -90
---- !u!61 &7318534602118517500
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7318534602118517472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 5.1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.1, y: 5.1}
-  m_EdgeRadius: 0
+  price: 0
+  AdditionalPositions:
+  - {x: 1, y: 0}
+  - {x: -1, y: 0}
+  - {x: 0, y: 1}
+  - {x: 0, y: -1}
+  nodeStrength: 1
+  standingTile:
+    coordinates: {x: 0, y: 0}
+    tiled: 0
+    tileName: 
+    noded: 0
+    nodeName: 
 --- !u!50 &7318534602118517503
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +137,40 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &9200059477360556751
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318534602118517472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.1, y: 5.1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.674859, y: 1.9799999}
+      - {x: -0.66640323, y: 0.6826679}
+      - {x: -1.9320046, y: 0.6992933}
+      - {x: -1.96475, y: -0.70743865}
+      - {x: -0.6649306, y: -0.7024774}
+      - {x: -0.65922195, y: -1.9424059}
+      - {x: 0.6976894, y: -1.9712026}
+      - {x: 0.69123244, y: -0.6985594}
+      - {x: 2, y: -0.68}
+      - {x: 1.9915884, y: 0.67472273}
+      - {x: 0.69595027, y: 0.6822573}
+      - {x: 0.7103925, y: 1.9799999}

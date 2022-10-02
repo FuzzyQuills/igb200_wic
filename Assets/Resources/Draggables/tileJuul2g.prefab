@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7318534602118517501}
   - component: {fileID: 7318534602118517474}
   - component: {fileID: 7318534602118517475}
-  - component: {fileID: 7318534602118517500}
   - component: {fileID: 7318534602118517503}
+  - component: {fileID: 8166653477165917150}
   m_Layer: 0
   m_Name: tileJuul2g
   m_TagString: Tile
@@ -103,33 +103,20 @@ MonoBehaviour:
   lastPosition: {x: 0, y: 0, z: 0}
   originalPos: {x: 0, y: 0, z: 0}
   objectsWithinRange: []
-  price: -90
---- !u!61 &7318534602118517500
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7318534602118517472}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.1, y: 5.1}
-    newSize: {x: 5.1, y: 5.1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5.1, y: 5.1}
-  m_EdgeRadius: 0
+  price: 0
+  AdditionalPositions:
+  - {x: -1, y: 1}
+  - {x: -1, y: 0}
+  - {x: 0, y: 1}
+  GoldPositions:
+  - {x: -1, y: -1}
+  nodeStrength: 1
+  standingTile:
+    coordinates: {x: 0, y: 0}
+    tiled: 0
+    tileName: 
+    noded: 0
+    nodeName: 
 --- !u!50 &7318534602118517503
 Rigidbody2D:
   serializedVersion: 4
@@ -151,3 +138,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!60 &8166653477165917150
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7318534602118517472}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.1, y: 5.1}
+    newSize: {x: 5.1, y: 5.1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -1.99, y: 1.99}
+      - {x: -1.99, y: -2.01}
+      - {x: 0.72999996, y: -2.01}
+      - {x: 0.71950865, y: 0.67298}
+      - {x: -0.58220595, y: 0.66222}
+      - {x: -0.5891271, y: 1.9795085}
