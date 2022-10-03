@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ddf7a31659015c4ab1d97c4d1dd1aed, type: 3}
+  m_Name: TutorialA8
+  m_EditorClassIdentifier: 
+  dialogueSpeed: 0.25
+  speakerName: Emily
+  speakerNameColor: {r: 0.4764151, g: 1, b: 0.9893081, a: 1}
+  speakerIcon: {fileID: 21300000, guid: 0639892859b7d734b9cb32fa9f519d0d, type: 3}
+  secondaryIcon: {fileID: 21300000, guid: 5f84e965c5353b541bc9984103f1e91f, type: 3}
+  dialogue:
+  - While we are free to design our floors as we desire, the client does have requirements
+    for each floor.
+  - 'Here you can see what we call "the nodes": Electric, Plumbing and Ventilation
+    nodes to be precise.'

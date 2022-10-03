@@ -12,18 +12,18 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/Scenes/TestScenes/TestBlueprint.unity
+    path: Assets/Scenes/TestBlueprint.unity
     guid: 5d61433e877fcd941b86fdfc030ba236
   - enabled: 1
-    path: Assets/Scenes/TestScenes/TestBuildingPreview.unity
+    path: Assets/Scenes/TestBuildingPreview.unity
     guid: 0960df0fc4a5af1488a8f4c0256c67be
   - enabled: 1
-    path: Assets/Scenes/TestScenes/TutorialBAD.unity
+    path: Assets/Scenes/Tutorial.unity
     guid: 11afbffe54a53924a98e76692738e7d2
   - enabled: 1
-    path: Assets/Scenes/TestScenes/TestPlumbing.unity
+    path: Assets/Scenes/TestPlumbing.unity
     guid: 780a041184cf0934f8cfcf6cf0311fc7
   - enabled: 1
-    path: Assets/Scenes/TestScenes/GameOver.unity
+    path: Assets/Scenes/GameOver.unity
     guid: c54a47c177152c3488a8110a14008db3
   m_configObjects: {}
