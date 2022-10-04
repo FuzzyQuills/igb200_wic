@@ -176,13 +176,13 @@ public class Draggable : MonoBehaviour
                         }
                     }
                 }
-                if (vibecheck != AdditionalPositions.Length && goldCheck != GoldPositions.Length)
+                if (vibecheck != AdditionalPositions.Length || goldCheck != GoldPositions.Length)
                 {
                     CleanDestroy();
                 }
                 else
                 {
-                    movementDestination = target.transform.position;
+                    movementDestination = target.transform.position - Vector3.forward;
                     target.GetComponent<bPosScript>().tileInfo.tiled = true;
                     target.GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;
                     occupado = target.GetComponent<bPosScript>().tileInfo;
@@ -199,13 +199,25 @@ public class Draggable : MonoBehaviour
                             }
                         }
                     }
+                    for (int i = 0; i < GoldPositions.Length; i++)
+                    {
+                        foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+                        {
+                            if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + GoldPositions[i])
+                            {
+                                t.tileInfo.tiled = true;
+                                t.tileInfo.tileName = "Fill";
+                                AdditionalOccupados.Add(t.tileInfo);
+                            }
+                        }
+                    }
                 }
                 fixNodes();
                 standingTile = target.GetComponent<bPosScript>().tileInfo;
             }
             else if (tag == "Node" && !target.GetComponent<bPosScript>().tileInfo.noded && target.GetComponent<bPosScript>().tileInfo.tiled) // If this is a node and the target position isnt 'noded'
             {
-                movementDestination = target.transform.position;
+                movementDestination = target.transform.position - (Vector3.forward * 2);
                 target.GetComponent<bPosScript>().tileInfo.noded = true;
                 target.GetComponent<bPosScript>().tileInfo.nodeName = gameObject.name;
                 occupado = target.GetComponent<bPosScript>().tileInfo;
