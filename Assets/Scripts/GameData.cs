@@ -21,7 +21,7 @@ public class GameData : MonoBehaviour
 
     public List<int> moneyChanges = new List<int>(); // Records of all times the amount of money has changed between scenes. For the inspection phase.
 
-    public bool shit = true;
+    public bool shit = true; // Temporary fix to a benign issue.
 
 
     private void Awake()
