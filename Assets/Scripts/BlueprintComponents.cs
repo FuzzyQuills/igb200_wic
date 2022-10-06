@@ -17,10 +17,14 @@ public class BlueprintComponents : MonoBehaviour
 
     public TMP_Text nodeText;
 
+    public TileInfoCollector tIC;
+
     private void Start()
     {
         //zoop();
         throwaway.text = $"You are on level {GameObject.FindObjectOfType<TileInfoCollector>().currentLevel}.<br>Nice!";
+
+        tIC = GameObject.Find("CodeMan").GetComponent<TileInfoCollector>();
 
         HighlightFormerTiles();
 
@@ -91,7 +95,8 @@ public class BlueprintComponents : MonoBehaviour
     /// </summary>
     void HighlightFormerTiles()
     {
-        TileInfoCollector tIC = GameObject.FindObjectOfType<TileInfoCollector>();
+        Debug.Log("Starting Highlight");
+        //TileInfoCollector tIC = GameObject.FindObjectOfType<TileInfoCollector>();
 
         if (tIC.currentLevel > 0)
         {
@@ -117,6 +122,11 @@ public class BlueprintComponents : MonoBehaviour
                     }
                 }
             }
+        }
+        else
+        {
+            Debug.Log(tIC.currentLevel);
+            Debug.Log("Error");
         }
     }
 
