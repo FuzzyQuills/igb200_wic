@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 using TMPro;
 
 
@@ -44,7 +45,6 @@ public class Dialogue : ScriptableObject
             secondaryBox.sprite = secondaryIcon;
             secondaryBox.color = Color.white;
         }
-        
     }
     void CloseBox()
     {
@@ -53,8 +53,9 @@ public class Dialogue : ScriptableObject
         nameText = null;
 
         avatarBox = null;
-        secondaryBox = null;        
+        secondaryBox = null;
 
+        FindObjectOfType<AudioManager>().Play("TextBlip");
     }
 
 
