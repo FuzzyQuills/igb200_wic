@@ -9,6 +9,8 @@ TagManager:
   - Node
   - Tile
   - VentHead
+  - ElecNode
+  - CircuitBreaker
   layers:
   - Default
   - TransparentFX
