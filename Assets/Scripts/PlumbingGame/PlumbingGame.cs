@@ -56,7 +56,7 @@ public class PlumbingGame : MonoBehaviour
             {
                 int r = Random.Range(0,generates.Length);
                 GameObject g = Instantiate(generates[r], transform);
-                g.transform.position = new Vector3(i+0.5f - (gridX / 2), -(j+0.5f - (gridY / 2)), 0) / scale;
+                g.transform.position = new Vector3((i+0.5f - (gridX / 2)) + transform.position.x, -(j+0.5f - (gridY / 2)) + transform.position.y, 0) / scale;
                 g.transform.localScale = Vector3.one * 0.95f / scale;
 
                 
@@ -72,10 +72,10 @@ public class PlumbingGame : MonoBehaviour
 
 
         GameObject start = Instantiate(Resources.Load("Pipes/PipeStart") as GameObject, transform);
-        start.transform.position = new Vector3(0.5f - (gridX/2), gridY+0.5f - (gridY/2), 0) / scale;
+        start.transform.position = new Vector3((0.5f - (gridX/2)) + transform.position.x, (gridY+0.5f - (gridY/2)) + transform.position.y, 0) / scale;
         start.transform.localScale = Vector3.one * 0.95f / scale;
         GameObject end =  Instantiate(Resources.Load("Pipes/PipeEnd") as GameObject, transform);
-        end.transform.position = new Vector3(gridX-0.5f - (gridX/2), -0.5f - (gridY/2), 0) / scale;
+        end.transform.position = new Vector3((gridX-0.5f - (gridX/2)) + transform.position.x, (-0.5f - (gridY/2)) + transform.position.y, 0) / scale;
         end.transform.localScale = Vector3.one * 0.95f / scale;
 
         for (int i = 0; i < pipes.Count; i++)
