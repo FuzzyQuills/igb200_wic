@@ -11,6 +11,7 @@ public class DragController : MonoBehaviour
     Vector3 worldPosition;
     private Draggable lastDragged;
 
+
     private void Awake()
     {
         // Checks for duplicate scripts like this and destroys them.
@@ -66,6 +67,7 @@ public class DragController : MonoBehaviour
     // Initiates dragging a tile.
     void InitDrag()
     {
+        FindObjectOfType<AudioManager>().Play("PickupTile");
         lastDragged.lastPosition = lastDragged.transform.position;
         lastDragged.EmptyTile();
         UpdateDragStatus(true);

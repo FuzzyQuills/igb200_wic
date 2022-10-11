@@ -322,7 +322,8 @@ PrefabInstance:
         type: 3}
       propertyPath: moneyUI_Canvas
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3468959634698737242, guid: 93a368436475ef94eb1280e7d628a651,
+        type: 3}
     - target: {fileID: 3369865413029567147, guid: 219411410c479ee4fb028c9f00bf046c,
         type: 3}
       propertyPath: m_RootOrder

@@ -182,6 +182,7 @@ public class Draggable : MonoBehaviour
                 }
                 else
                 {
+                    FindObjectOfType<AudioManager>().Play("PutdownTile");
                     movementDestination = target.transform.position - Vector3.forward;
                     target.GetComponent<bPosScript>().tileInfo.tiled = true;
                     target.GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;

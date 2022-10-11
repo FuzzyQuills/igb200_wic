@@ -27,6 +27,8 @@ public class Dialogue : ScriptableObject
     Image avatarBox;
     Image secondaryBox;
 
+
+
     public void DisplayBox()
     {
         GameObject g = Instantiate(Resources.Load("DialogueBox") as GameObject, GameObject.Find("Canvas").transform);
@@ -89,7 +91,8 @@ public class Dialogue : ScriptableObject
             else
             {
                 textBox.text += s[i];
-            }            
+            }
+            FindObjectOfType<AudioManager>().Play("TextBlip");
             yield return new WaitForSeconds(0.1f * dialogueSpeed);
         }
         while (Input.touchCount < 0)
@@ -133,7 +136,7 @@ public class Dialogue : ScriptableObject
                 {
                     textBox.text += s[i][j];
                 }
-                
+                FindObjectOfType<AudioManager>().Play("TextBlip");
                 yield return new WaitForSeconds(0.1f * dialogueSpeed);
             }
             while (Input.touchCount == 0)
