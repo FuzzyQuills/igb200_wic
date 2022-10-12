@@ -70,13 +70,13 @@ public class VentHeadScript : MonoBehaviour
         Vector2 currentPos = father.coord;
         int lineCount = 0;
         lr.positionCount = 1;
-        lr.SetPosition(0, transform.position - Vector3.forward);
+        lr.SetPosition(0, transform.position - (Vector3.forward * transform.position.z));
 
         void Paint(RaycastHit2D hit)
         {
             lineCount++;
             lr.positionCount = lineCount + 1;
-            lr.SetPosition(lineCount, hit.collider.transform.position - Vector3.forward);            
+            lr.SetPosition(lineCount, new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y, transform.position.z));            
         }
 
         while (Input.touchCount > 0)
@@ -85,15 +85,17 @@ public class VentHeadScript : MonoBehaviour
             RaycastHit2D hit = Physics2D.Raycast(fingerPos, Vector2.zero);
             if (hit.collider != null)
             {
+                //Debug.Log(hit.collider.name);
                 if (hit.collider.GetComponent<VentObject>() && hit.collider.GetComponent<VentObject>().painted == false)
                 {
+                    //Debug.Log($"a - {father.coord} TO {hit.collider.GetComponent<VentObject>().coord}");
                     if (VentGameScript.near(currentPos, hit.collider.GetComponent<VentObject>().coord))
                     {
+                        //Debug.Log("b");
                         Paint(hit);
                         currentPos = hit.collider.GetComponent<VentObject>().coord;
                         hit.collider.GetComponent<VentObject>().painted = true;
                         hit.collider.GetComponent<VentObject>().paintID = identity;
-                        Debug.Log("A");
                     }                    
                 }
                 if (hit.collider.tag == "VentHead" && hit.collider.transform != this.transform)

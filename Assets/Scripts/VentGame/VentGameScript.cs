@@ -8,27 +8,41 @@ public class VentGameScript : MonoBehaviour
 {
     public int gridSize = 8;
     public int numberOfVents = 4;
-    
-    
-    public GameObject thingyA;
-    public GameObject thingyAHolder;
+    public float scale = 1;
+
+    public GameObject ventPosition;
+    public GameObject gameHolder;
 
     public List<VentObject> positions = new List<VentObject>();
 
-    public GameObject thingyB;
+    public GameObject ventNodeObject;
     public Color[] thingyBColors;
     
     public List<VentHeadScript> ventNodes = new List<VentHeadScript>();
 
+    public TMP_Text winText;
+    int stars = 5;
+    bool stopTheGame = false;
+
     private void Start()
     {
-        //// Color
-        //thingyBColors = new Color[numberOfVents];
-        //for (int i = 0; i < thingyBColors.Length; i++)
-        //{
-        //    thingyBColors[i] = Random.ColorHSV(0,1,0.8f,1,1,1);
-        //    //thingyBColors[i] = Color.HSVToRGB((float)1/(numberOfVents * (i+1)),1,1);
-        //}
+        // Update game difficulty to suite the floor level
+        if (GameObject.FindObjectOfType<TileInfoCollector>())
+        {
+            TileInfoCollector tic = GameObject.FindObjectOfType<TileInfoCollector>();
+
+            if (numberOfVents + tic.currentLevel < 10) // There are 9 colors. Plus adding any more nodes would probably not be fun.
+            {
+                numberOfVents += tic.currentLevel;
+            }
+            else
+            {
+                numberOfVents = 9;
+            }
+
+        }
+
+        
 
 
         // Spawn coordinates
@@ -37,8 +51,10 @@ public class VentGameScript : MonoBehaviour
             for (int j = 0; j < gridSize; j++)
             {
                 //GameObject g = Instantiate(thingyA, new Vector3(i-gridSize / 2,-j + gridSize / 2,0), Quaternion.identity);
-                GameObject g = Instantiate(thingyA, thingyAHolder.transform);
-                g.transform.position = new Vector3(i - gridSize / 2, -j + gridSize / 2, 0);
+                GameObject g = Instantiate(ventPosition, gameHolder.transform.position, Quaternion.identity);
+                g.transform.parent = gameHolder.transform;
+                g.transform.position = new Vector3((float)i - gridSize / 2,(float)-j + gridSize / 2, 0) * scale;
+                g.transform.localScale = g.transform.localScale * scale;
                 g.GetComponent<VentObject>().coord = new Vector2(i,j);
                 positions.Add(g.GetComponent<VentObject>());
             }
@@ -55,8 +71,10 @@ public class VentGameScript : MonoBehaviour
                     //Debug.Log(rand);
                     if (!positions[rand].vented && !near(positions[rand].coord, remember))
                     {
-                        GameObject g = Instantiate(thingyB, positions[rand].transform.position - Vector3.forward, Quaternion.identity);
+                        GameObject g = Instantiate(ventNodeObject, positions[rand].transform.position, Quaternion.identity);
                         g.transform.parent = positions[rand].transform;
+                        g.transform.position += -Vector3.forward * 0.1f;
+                        g.transform.localScale = g.transform.localScale * scale;
                         g.GetComponent<SpriteRenderer>().color = thingyBColors[i];
                         g.GetComponent<VentHeadScript>().identity = i;
                         g.GetComponent<VentHeadScript>().thisColor = thingyBColors[i];
@@ -74,7 +92,10 @@ public class VentGameScript : MonoBehaviour
 
     private void Update()
     {
-        CheckForWin();
+        if (!stopTheGame)
+        {
+            CheckForWin();
+        }        
     }
 
     public void CheckForWin()
@@ -90,6 +111,16 @@ public class VentGameScript : MonoBehaviour
         if (i >= ventNodes.Count / 2)
         {
             Debug.Log("Win");
+            winText.text = $"{stars} Stars!<br><color=green>{(int)(20 * 9 * (0.5 + (0.2 * stars)))}k awarded!";
+
+            // Reward finances
+            GameData gd = GameObject.FindObjectOfType<GameData>();
+            if (gd)
+            {
+                gd.expenditure += (int)(20 * 9 * (0.5 + (0.2 * stars))); // Reward assumed on 9 tiles at 3 stars. To Be Updated
+            }
+            // Stop recursion
+            stopTheGame = true;
         }        
     }
 

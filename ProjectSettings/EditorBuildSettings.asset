@@ -9,9 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 5c03c0975583bcd4e983222d90b1a3e7
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
     path: Assets/Scenes/Blueprint.unity
     guid: 5d61433e877fcd941b86fdfc030ba236
   - enabled: 1
@@ -21,8 +18,14 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 11afbffe54a53924a98e76692738e7d2
   - enabled: 1
-    path: Assets/Scenes/PlumbingGame.unity
+    path: Assets/Scenes/Minigames/PlumbingGame.unity
     guid: 780a041184cf0934f8cfcf6cf0311fc7
+  - enabled: 1
+    path: Assets/Scenes/Minigames/ElecGame.unity
+    guid: a84747a0ab5edf94191af16dd9fe8e3a
+  - enabled: 1
+    path: Assets/Scenes/Minigames/VentGame.unity
+    guid: dd6015f43d451e54ba8d9d808d84ecb5
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: c54a47c177152c3488a8110a14008db3

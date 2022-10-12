@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 45c0c4927c38aa846a408ddbd5eb1430, type: 3}
+  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - Howdy! You must be the extra hand i've heard so much about.

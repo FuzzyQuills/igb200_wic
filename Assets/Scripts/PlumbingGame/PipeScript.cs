@@ -57,14 +57,14 @@ public class PipeScript : MonoBehaviour
 
     // Rotate when touched
     private void OnMouseDown()
-    {
-        if (mysteryCube != null)
-        {
-            Destroy(mysteryCube);
-            GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
-        } else
+    {        
         if (interactive)
         {
+            if (mysteryCube != null)
+            {
+                Destroy(mysteryCube);
+                //GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
+            }
             ChangeDirection(true);
         }        
     }

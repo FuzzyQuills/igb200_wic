@@ -23,6 +23,7 @@ public class GameData : MonoBehaviour
 
     public bool shit = true; // Temporary fix to a benign issue.
 
+    public List<string> minigamePlaylist = new List<string>();
 
     private void Awake()
     {
@@ -131,5 +132,12 @@ public class GameData : MonoBehaviour
         expenditure = 0;
     }
 
+    /// <summary>
+    /// For creating a series of minigames
+    /// </summary>
+    void CreatePlaylist()
+    {
+
+    }
 
 }
