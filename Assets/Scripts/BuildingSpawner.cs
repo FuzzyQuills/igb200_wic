@@ -50,7 +50,11 @@ public class BuildingSpawner : MonoBehaviour
 
     private void Update()
     {
-        Vector3 target = buildingHolder.transform.position + (Vector3.up * (0.35f + (0.7f * tIC.currentLevel)));
+        Vector3 target = buildingHolder.transform.position;
+        if (tIC != null)
+        {
+            target = buildingHolder.transform.position + (Vector3.up * (0.35f + (0.7f * tIC.currentLevel)));
+        }        
         cam.transform.LookAt(target);
         cam.transform.RotateAround(buildingHolder.transform.position, Vector3.up, 15 * Time.deltaTime);
         

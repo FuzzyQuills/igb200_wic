@@ -125,8 +125,8 @@ public class BlueprintComponents : MonoBehaviour
         }
         else
         {
-            Debug.Log(tIC.currentLevel);
-            Debug.Log("Error");
+            //Debug.Log(tIC.currentLevel);
+            //Debug.Log("Error");
         }
     }
 

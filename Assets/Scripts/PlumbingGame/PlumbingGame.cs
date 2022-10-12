@@ -49,7 +49,7 @@ public class PlumbingGame : MonoBehaviour
         //    scale = scale + (codeMan.currentLevel * 0.45f); // Should be 0.5f for an even, infinite division
         //}
 
-
+        // Spawn the pipes in random positions
         for (int i = 0; i < gridX; i++)
         {
             for (int j = 0; j < gridY; j++)
@@ -147,7 +147,7 @@ public class PlumbingGame : MonoBehaviour
             // Win Condition
             if (p.pos == new Vector2(gridX - 1, gridY - 1))
             {                
-                if (p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
+                if (p.pipeScript.mysteryCube == null && p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
                 {
                     // Display win message
                     timerStopper = true; // Stop timer

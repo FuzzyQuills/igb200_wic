@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Emily
   speakerNameColor: {r: 0.4764151, g: 1, b: 0.9893081, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 0639892859b7d734b9cb32fa9f519d0d, type: 3}
+  speakerIcon: {fileID: 21300000, guid: e3421043335128945ae80d2a584bdf4f, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 5f84e965c5353b541bc9984103f1e91f, type: 3}
   dialogue:
   - While we are free to design our floors as we desire, the client does have requirements
