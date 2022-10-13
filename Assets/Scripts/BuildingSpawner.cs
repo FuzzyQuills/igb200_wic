@@ -21,6 +21,7 @@ public class BuildingSpawner : MonoBehaviour
 
     private void Start()
     {
+
         cam.transform.position += Vector3.up * (0.7f * tIC.currentLevel);
 
         if (tIC)

@@ -21,9 +21,13 @@ public class GameData : MonoBehaviour
 
     public List<int> moneyChanges = new List<int>(); // Records of all times the amount of money has changed between scenes. For the inspection phase.
 
-    public bool shit = true; // Temporary fix to a benign issue.
+    public bool kink = true; // Temporary fix to a benign issue.
 
     public List<string> minigamePlaylist = new List<string>();
+
+    public string[] playlist;
+    public int[] playlistStr; // The amount of reward given upon game completion (based on node position)
+    public int playlistOrder = 0;
 
     private void Awake()
     {
@@ -82,7 +86,7 @@ public class GameData : MonoBehaviour
     public void UpdateMoneyUI()
     {
 
-        if (shit)
+        if (kink)
         {
             // Get all the draggables in the scene and figure out their whole cost
             dragsInScene = GameObject.FindObjectsOfType<Draggable>();
@@ -128,16 +132,20 @@ public class GameData : MonoBehaviour
 
         money += expenditure;
 
-        shit = false;
+        kink = false;
         expenditure = 0;
     }
 
-    /// <summary>
-    /// For creating a series of minigames
-    /// </summary>
-    void CreatePlaylist()
+    public void NextGame()
     {
-
+        if (playlistOrder >= playlist.Length) // End of playlist
+        {
+            SceneManager.LoadScene("SummaryPhase");
+        }
+        else
+        {
+            SceneManager.LoadScene(playlist[playlistOrder]);
+            playlistOrder++;
+        }        
     }
-
 }

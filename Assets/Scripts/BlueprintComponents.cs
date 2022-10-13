@@ -29,7 +29,7 @@ public class BlueprintComponents : MonoBehaviour
         HighlightFormerTiles();
 
         // Dont ask.
-        GameObject.FindObjectOfType<GameData>().shit = true;
+        GameObject.FindObjectOfType<GameData>().kink = true;
     }
 
     private void Update()
@@ -69,7 +69,7 @@ public class BlueprintComponents : MonoBehaviour
     /// <summary>
     /// Because Codeman becomes disconnected from the scene, buttons must use this function to save
     /// </summary>
-    public void SaveAndContinue(string s)
+    public void SaveAndContinue()
     {
         // Activate the node interface if disabled
         holders[0].SetActive(false);
@@ -83,11 +83,12 @@ public class BlueprintComponents : MonoBehaviour
                 return;
             }
         }
+        
         // Record positions of the tiles
         GameObject.FindObjectOfType<TileInfoCollector>().SaveTiles();
         GameObject.FindObjectOfType<GameData>().SaveMoney();
-        // Load the next scene
-        SceneManager.LoadScene(s);
+        // Begin the minigame playlist
+        GameObject.FindObjectOfType<GameData>().NextGame();
     }
 
     /// <summary>
@@ -95,7 +96,7 @@ public class BlueprintComponents : MonoBehaviour
     /// </summary>
     void HighlightFormerTiles()
     {
-        Debug.Log("Starting Highlight");
+        //Debug.Log("Starting Highlight");
         //TileInfoCollector tIC = GameObject.FindObjectOfType<TileInfoCollector>();
 
         if (tIC.currentLevel > 0)
@@ -144,6 +145,49 @@ public class BlueprintComponents : MonoBehaviour
                 }
             }
         }        
+    }
+
+
+    /// <summary>
+    /// For creating a series of minigames
+    /// </summary>
+    public void CreatePlaylist()
+    {
+        List<string> playlist = new List<string>();
+        NodeHolderScript[] nhs = GameObject.FindObjectsOfType<NodeHolderScript>();
+        foreach (NodeHolderScript zoop in nhs)
+        {
+            for (int i = 0; i < zoop.nodesMax; i++)
+            {
+                switch (zoop.nodeName)
+                {
+                    case "nodeVents":
+                        playlist.Add("VentGame");
+                        break;
+                    case "nodePlumbing":
+                        playlist.Add("PlumbingGame");
+                        break;
+                    case "nodeElectricity":
+                        playlist.Add("ElecGame");
+                        break;
+                    default:
+                        break;
+                }
+
+            }
+        }
+
+        // Randomize list
+        for (int i = 0; i < playlist.Count; i++)
+        {
+            string temp = playlist[i];
+            int randomIndex = Random.Range(i, playlist.Count);
+            playlist[i] = playlist[randomIndex];
+            playlist[randomIndex] = temp;
+        }
+
+        // Give list to the codeman as an array
+        GameObject.FindObjectOfType<GameData>().playlist = playlist.ToArray();
     }
 
 }
