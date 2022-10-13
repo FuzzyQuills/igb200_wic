@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Project
   m_RootView: {fileID: 5}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 87720
+  controlID: 143
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 601
     height: 694
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -150,7 +150,7 @@ MonoBehaviour:
     height: 30
   m_MinSize: {x: 0, y: 0}
   m_MaxSize: {x: 0, y: 0}
-  m_LastLoadedLayoutName: CohanMobile
+  m_LastLoadedLayoutName: 
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_MinSize: {x: 500, y: 200}
   m_MaxSize: {x: 40480, y: 16192}
   vertical: 0
-  controlID: 87719
+  controlID: 138
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,8 +219,8 @@ MonoBehaviour:
     y: 0
     width: 187
     height: 947
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -422,9 +422,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 446d0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: fca0f4ffc8a6f4fff4a7f4fffca9f4ffd6aaf4ffb8abf4ff9aacf4ffacacf4ff06adf4ffacadf4ffc2adf4ffaa04f8ffb204f8ff2a06f8ffdc09f8ffbca5f8ffc4a5f8ff3ca7f8ff24b8f8ff2cb8f8fff2bff8ff42f9f8ff5a6ff9ffd2c4f9ff58d6f9ff8ad6f9ff90d7f9ffd2d8f9ff24daf9ff6cdef9ff74def9ff7ae0f9ffc8e4f9ff98e6f9ff16e8f9ff0c00faffb606faff4008faff100afaffa028faff064dfaff444efaffce4ffaff3c89faff60f6faffdcf7faff0a17fbfff225fbfff826fbffc828fbff082afbff0a44fbffbe45fbffc847fbffd44efbff865efbff2a77fbff3a77fbff4277fbffb878fbff4a6bfcfff085fcff76dafcff44fdfcff6a17fdff4c24fdffe03dfdff8a3ffdff5447fdffd84cfdffca87fdff4889fdff4809ffff5c0bffff680cffff3612ffff8e18ffff7883fffffcf6ffff24fbfffff4ffffff1071000028710000d2720000447400002e9f0000709f0000909f0000eaa00000fea00000bea100005ea700004ea9000046aa00009eaa0000f80e0100120f0100780f0100641001001211010034110100ec1101008a3c0100183d01001e410100764101003899010030a201004aa20100cca60100b8ab010092b90100485f02007464020078640200bec20200e2c20200daea02001a4a0300
+      m_ExpandedIDs: 4842f7fff059f7fff262f7ff8e72f7ffae83f7ff289cf7ff6e9ef7ffbca0f7ff02a3f7ff2aa7f7ff70a9f7ffbcabf7ff02aef7ff4eb0f7ff94b2f7ffe2b4f7ff28b7f7ff78b9f7ff44c0f7ff92c2f7ffd8c4f7ff26c7f7ff72c9f7ffb8cbf7ff06cef7ff52d0f7ff64d3f7ffcae5f7ff64f2f7ff12f7f7ff7afbf7ffc8fdf7ff5005f8ff7211f8ff483af8ff603df8ff703ff8ffb641f8ffc643f8ff4c50f8ff5c52f8ffa254f8fff056f8ff0059f8ff265bf8ffba5cf8ff9ca0f8ffbaa7f8fffabff8ffc8c2f8ff92c4f8ff04f0f8ff3203f9ff2c37f9ffba39f9ffa046f9ff7852f9ff5889f9ffe8b0f9ffb4b2f9ffdeb6f9ffa8b8f9ffa6b9f9ffb2baf9ff3abcf9ff46bdf9ff10bff9ff1cc0f9ffe6c1f9ffd21ffaff0caefaffcab6faffd6b7faff32b9faff60d3faff84d8faff16dbfaff60ddfaffa6dffafff4e1faff3ee4faff78e5faff00e7faff0ce8faffd6e9faffd00bfbffd40bfbff4a0cfbff940efbffe210fbff2a26fbffbc2ffbff0232fbff5034fbff3c38fbff726afbffd26efbff32e6fbff9aeffbff24f1fbffbcf3fbffa6f5fbff70f7fbffbaf9fbff08fcfbff4efefbff9800fcff9c1efcffe620fcff2c23fcff7a25fcffc027fcff0a2afcff582cfcff9e2efcffb044fcffea44fcff7847fcff564bfcffdc36fdffc83afdff6c3efdffba40fdff6043fdff3a55fdff749ffdff34a0fdff3ea2fdff24b6fdff5eb6fdff82bafdff8cbcfdffd0befdffdac0fdff1ec3fdff4ee6fdff88e6fdff92e8fdffa0eafdffaaecfdffb8eefdffc2f0fdff14f3fdff1ef5fdff70f7fdff9ce4ffffd6e4ffff56e7ffff26fbfffff4ffffffd86b000082770000d8770000b48a000062900000cc920000be9300006c9e0000ba9e0000a0a60000eea600003caf00003cc2000092c900001ccc000074cc00000acd00003ecd0000a6d00000bad00000fcda000074db0000c6dd00009ede000064df000052e000007cf70000bef80000961501006e16010034170100221801004227010082340100da3401006c3601007e380100a43801006440010018420100b04f0100645b0100185d0100827f0100ae7f0100a2870100fa870100b0880100b48a0100aa8b0100b88c0100ae8d0100068e0100bc9501007ea10100c6a10100a2a30100eaa30100aaa5010002a60100aaa70100f2a70100b8a90100cca90100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -532,22 +532,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Resources/Pipes
+    - Assets/Scenes/Minigames
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Resources/Pipes
+  - Assets/Scenes/Minigames
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\cgoet\Documents\GitHub\igb200_wic
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c710000
-    m_LastClickedID: 28972
-    m_ExpandedIDs: 00000000e6700000e8700000ea700000ec700000ee700000f070000000ca9a3b
+    m_SelectedIDs: aa720000
+    m_LastClickedID: 29354
+    m_ExpandedIDs: 00000000f0700000f2700000f4700000f6700000f8700000fa70000020710000267100002e71000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -575,7 +575,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000e6700000e8700000ea700000ec700000ee700000f070000000ca9a3b
+    m_ExpandedIDs: 00000000f0700000f2700000f4700000f6700000f8700000fa700000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -603,7 +603,7 @@ MonoBehaviour:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: 
+    m_ExpandedInstanceIDs: 00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -879,9 +879,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 300.74158, y: 738.9677, z: -23.850496}
+    m_Target: {x: 508.2584, y: 586.32104, z: -21.89234}
     speed: 2
-    m_Value: {x: 302.08652, y: 740.63544, z: -23.528244}
+    m_Value: {x: 500.63336, y: 591.122, z: -21.554018}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -932,9 +932,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 748.33514
+    m_Target: 785.6668
     speed: 2
-    m_Value: 716.11017
+    m_Value: 751.8343
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1015,6 +1015,6 @@ MonoBehaviour:
     fitToScreenEnabled: 1
     rotationDegree: 0
     highlightSafeAreaEnabled: 0
-    friendlyName: Apple iPhone 7
+    friendlyName: Apple iPhone 8
     networkReachability: 1
     systemLanguage: 10

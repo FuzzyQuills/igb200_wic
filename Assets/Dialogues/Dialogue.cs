@@ -135,11 +135,12 @@ public class Dialogue : ScriptableObject
 
     public IEnumerator scrollTextArray(string[] s = null)
     {
+        AudioManager am = GameObject.Find("Audio Manager").GetComponent<AudioManager>();
         DisplayBox();
         if (s == null)
         {
             s = dialogue;
-        }        
+        } 
         for (int i = 0; i < s.Length; i++)
         {
             textBox.text = "";
@@ -166,7 +167,7 @@ public class Dialogue : ScriptableObject
                 {
                     textBox.text += s[i][j];
                 }
-                FindObjectOfType<AudioManager>().Play("TextBlip");
+                am.Play("TextBlip");
                 yield return new WaitForSeconds(0.1f * dialogueSpeed);
             }
             while (Input.touchCount == 0)
