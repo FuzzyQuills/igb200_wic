@@ -45,8 +45,11 @@ public class BuildingSpawner : MonoBehaviour
                         g.transform.parent = buildingHolder.transform;
                     }
                 }
-            }
+            }            
         }
+
+        //Debug.Log(GameObject.FindObjectOfType<GameData>());
+        //GameObject.FindObjectOfType<GameData>().kink = true;
     }
 
     private void Update()

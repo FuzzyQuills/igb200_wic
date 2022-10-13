@@ -19,6 +19,8 @@ public class BlueprintComponents : MonoBehaviour
 
     public TileInfoCollector tIC;
 
+    public GameData gd;
+
     private void Start()
     {
         //zoop();
@@ -28,8 +30,10 @@ public class BlueprintComponents : MonoBehaviour
 
         HighlightFormerTiles();
 
-        // Dont ask.
-        GameObject.FindObjectOfType<GameData>().kink = true;
+        // Dont ask.        
+        gd = tIC.transform.GetComponent<GameData>();
+        gd.kink = true;
+        gd.playlistOrder = 0;
     }
 
     private void Update()
