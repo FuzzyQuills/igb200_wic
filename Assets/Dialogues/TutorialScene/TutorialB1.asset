@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ddf7a31659015c4ab1d97c4d1dd1aed, type: 3}
+  m_Name: TutorialB1
+  m_EditorClassIdentifier: 
+  dialogueSpeed: 0.25
+  speakerName: Sarah
+  speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
+  speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
+  secondaryIcon: {fileID: 0}
+  dialogue:
+  - Thank you for that demonstration, Emily.
+  - Well, with that out of the way let's get talking about the actual construction
+    of your floor.
+  - Ah, look who it is! It's Stephanie, our construction expert and site supervisor.

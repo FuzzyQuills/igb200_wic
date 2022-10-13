@@ -17,7 +17,21 @@ public class SceneScript : MonoBehaviour
     /// <param name="sceneName">Name of the scene to change to</param>
     public void ChangeScene(string sceneName)
     {
+        
         SceneManager.LoadScene(sceneName);
+    }
+
+    public void LoadNextGame()
+    {
+        if (GameObject.FindObjectOfType<GameData>() && GameObject.FindObjectOfType<GameData>().playlist.Length > 0)
+        {
+            GameObject.FindObjectOfType<GameData>().NextGame();
+        }
+        else
+        {
+            Debug.LogWarning("Error. Codeman's GameData either doesnt exist or is lacking a playlist");
+            SceneManager.LoadScene("SummaryPhase");
+        }
     }
 
     /// <summary>

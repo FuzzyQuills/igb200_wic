@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ddf7a31659015c4ab1d97c4d1dd1aed, type: 3}
+  m_Name: TutorialBadEnding
+  m_EditorClassIdentifier: 
+  dialogueSpeed: 0.25
+  speakerName: Stephanie
+  speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
+  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
+  secondaryIcon: {fileID: 21300000, guid: 02fe491ee94b3a74b8623d15ff982a8c, type: 3}
+  dialogue:
+  - We have some other jobs too (I swear!)
+  - It's just... they're not implemented yet.
+  - Come back later when the game is done!

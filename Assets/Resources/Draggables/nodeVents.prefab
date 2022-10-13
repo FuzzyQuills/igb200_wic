@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b,
     type: 3}
-  m_Color: {r: 1, g: 0.46330076, b: 0, a: 0.039215688}
+  m_Color: {r: 1, g: 0.46330076, b: 0, a: 0.21960784}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -199,7 +199,14 @@ MonoBehaviour:
   - {x: -1, y: 1}
   - {x: -1, y: 0}
   - {x: -1, y: -1}
+  GoldPositions: []
   nodeStrength: 0
+  standingTile:
+    coordinates: {x: 0, y: 0}
+    tiled: 0
+    tileName: 
+    noded: 0
+    nodeName: 
 --- !u!61 &7318534602118517500
 BoxCollider2D:
   m_ObjectHideFlags: 0

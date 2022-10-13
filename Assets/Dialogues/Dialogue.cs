@@ -31,7 +31,7 @@ public class Dialogue : ScriptableObject
 
     public void DisplayBox()
     {
-        GameObject g = Instantiate(Resources.Load("DialogueBox") as GameObject, GameObject.Find("Canvas").transform);
+        GameObject g = Instantiate(Resources.Load("DialogueBox") as GameObject, GameObject.Find("MobileCanvas").transform);
         textBox = g.transform.Find("TextBox").GetComponent<TMP_Text>();
 
         nameText = g.transform.Find("Name").GetComponent<TMP_Text>();
@@ -48,9 +48,9 @@ public class Dialogue : ScriptableObject
             secondaryBox.color = Color.white;
         }
     }
-    void CloseBox()
+    public void CloseBox()
     {
-        Destroy(textBox.gameObject.transform.parent.gameObject); // Works I guess.
+        Destroy(textBox?.gameObject.transform.parent.gameObject); // Works I guess.
         textBox = null;
         nameText = null;
 
@@ -60,14 +60,44 @@ public class Dialogue : ScriptableObject
         FindObjectOfType<AudioManager>().Play("TextBlip");
     }
 
-
-
-    public IEnumerator scrollTextSingle(string s = null)
-    {        
-        DisplayBox();
-        if (s == null)
+    public IEnumerator InstantTextSingle(int num = -1)
+    {
+        if (avatarBox == null)
+        {
+            DisplayBox();
+        }
+        
+        string s;
+        if (num == -1)
         {
             s = dialogue[0];
+        }
+        else
+        {
+            s = dialogue[num];
+        }
+        textBox.text = s;
+        FindObjectOfType<AudioManager>().Play("TextBlip");
+        yield return new WaitForSeconds(0.1f);
+        while (Input.touchCount < 0)
+        {
+            yield return null;
+        }
+        CloseBox();
+        yield return null;
+    }
+
+    public IEnumerator scrollTextSingle(int num = -1)
+    {        
+        DisplayBox();
+        string s;
+        if (num == -1)
+        {
+            s = dialogue[0];
+        }
+        else
+        {
+            s = dialogue[num];
         }
         textBox.text = "";
         for (int i = 0; i < s.Length; i++)
