@@ -83,13 +83,19 @@ MonoBehaviour:
     source: {fileID: 0}
   - name: PickupTile
     clip: {fileID: 8300000, guid: d6b39f0011dc8ba4284eb4df90c1d03c, type: 3}
-    volume: 0.35
+    volume: 0.55
     pitch: 1
     loop: 0
     source: {fileID: 0}
   - name: PutdownTile
     clip: {fileID: 8300000, guid: c523c4faa08c25e40b43b239ef3d0638, type: 3}
-    volume: 0.35
+    volume: 0.55
     pitch: 1
     loop: 0
+    source: {fileID: 0}
+  - name: Theme
+    clip: {fileID: 8300000, guid: 433c4407ffd68c14897ef514d20907e6, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 1
     source: {fileID: 0}

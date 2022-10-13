@@ -18,8 +18,17 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - Connect at least half of the vents by connecting the colored nodes together.
-  - Vents cannot overlap, or it would ruin the circulation!
-  - You can cancel a vent's conncection by tapping it again.
-  - Dont fret if you can't connect every vent together. Not all combinations are
+  - 'Connect at least half of the vents by connecting the colored nodes together.
+
+    (0
+    of 3)'
+  - 'Vents cannot overlap, or it would ruin the circulation!
+
+    (1 of 3)'
+  - 'You can cancel a vent''s conncection by tapping it again.
+
+    (2 of 3)'
+  - 'Dont fret if you can''t connect every vent together. Not all combinations are
     possible!
+
+    (3 of 3)'

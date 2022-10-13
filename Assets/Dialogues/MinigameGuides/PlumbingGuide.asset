@@ -18,8 +18,15 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - 'Get that blue pipe up top connected other one down below. '
-  - You can open those boxes in order to get pipe pieces.
-  - Pipes can be rotated by touching them. The pipes will be properly connected if
-    they turn green.
-  - Try and get the pipes connected quickly in order to score more funding.
+  - "Get that blue pipe up top connected other one down below. \n(0 of 3)"
+  - 'You can open those boxes in order to get pipe pieces.
+
+    (1 of 3)'
+  - 'Pipes can be rotated by touching them. The pipes will be properly connected
+    if they turn green.
+
+    (2 of 3)'
+  - 'Try and get the pipes connected quickly in order to score more funding.
+
+    (3
+    of 3)'

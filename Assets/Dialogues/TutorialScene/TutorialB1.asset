@@ -18,7 +18,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - Thank you for that demonstration, Emily.
-  - Well, with that out of the way let's get talking about the actual construction
-    of your floor.
-  - Ah, look who it is! It's Stephanie, our construction expert and site supervisor.
+  - Thanks for that Emily, we'll be going now, cya.
+  - Since Emily did all the talking for me we will just move onto the next phase
+    of work, the construction.
+  - As you see here construction starts an--

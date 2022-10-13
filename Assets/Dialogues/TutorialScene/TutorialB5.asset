@@ -24,6 +24,6 @@ MonoBehaviour:
     too.
   - You can rotate these pipes by tappin' them. Getting them alligned properly makes
     them green.
-  - When the top-blue-pipe is successfully connected to the bottom-blue-pipe, you
+  - Once you've connected the pipe on the top left, to the bottom right pipe, you
     win!
   - Get this done quick and you will be rewarded handsomely.

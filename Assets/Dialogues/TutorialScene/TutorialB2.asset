@@ -18,7 +18,7 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - Howdy! You must be the extra hand i've heard so much about.
-  - Im glad you are interested in working in construction because, well, you're going
-    to be doing alot of that here.
-  - But dont worry, i'll go over what is expected of you on this project.
+  - 'Hey!! You people cant be walking around here without a safety hat! '
+  - 'OH is that you Sarah? '
+  - 'That means you must be the new hire, the names Stephanie im head of construction
+    on this build site. '

@@ -18,12 +18,13 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 5f84e965c5353b541bc9984103f1e91f, type: 3}
   dialogue:
-  - As you may recall from the blueprinting phase, there are nodes attatched to each
-    floor.
-  - It is your job to get these parts working as intended.
+  - 'Well since they''ll be working with me i feel more obliged to show them and
+    a little safer if told them how everything works around here. '
+  - Our job around here is to satisfy our clients needs by getting the "nodes" for
+    each floor working as intended.
   - The quality of your work will dictate how much funding the client grants you
     for your future floors, so it's important to do a good job.
   - I will warn you though, as the tower increases in size, the expectations of the
     client will increase.
-  - The general rule of thumb is that the quicker you can get your work done, the
-    better you will be rewarded. We don't reward slackers here!
+  - 'The general rule of thumb is that the quicker you can get your work done, the
+    better you will be rewarded. '
