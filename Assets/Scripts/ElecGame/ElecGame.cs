@@ -28,6 +28,7 @@ public class ElecGame : MonoBehaviour
 
     [Header("Win Condition (Voltages)")]
     bool gameWon = false;
+    bool moneyRewarded = false;
     public CircuitBreaker finalSwitch; // when active, switches on circuit breaker controlling power to the player's building. 
     public TMP_Text finalVoltageLabel;
     public TMP_Text startingVoltageLabel;
@@ -146,8 +147,9 @@ public class ElecGame : MonoBehaviour
                 finalVoltageLabel.text = string.Format("SUCCESS!\nFinal Voltage: {0:0.00}V\n{1}K awarded!", 
                                                         finalVoltage, prizeMoney);
                 finalSwitch.disableBreaker = true;
-                if (c_gd) {
+                if (c_gd && !moneyRewarded) {
                     c_gd.expenditure += prizeMoney;
+                    moneyRewarded = true;
                 }
                 foreach (ElecNodeLayer layer in layers) {
                     foreach (ElecNode node in layer.nodes) {
