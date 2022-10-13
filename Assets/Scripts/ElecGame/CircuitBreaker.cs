@@ -5,7 +5,8 @@ using UnityEngine;
 public class CircuitBreaker : MonoBehaviour
 {
     public Animator anim;
-    public bool IsOn;
+    public bool IsOn = false;
+    public bool disableBreaker = false;
 
     // Update is called once per frame
     void Update()
@@ -14,6 +15,6 @@ public class CircuitBreaker : MonoBehaviour
     }
 
     public void OnMouseDown() {
-        IsOn = !IsOn;
+        if (!disableBreaker) IsOn = !IsOn;
     }
 }
