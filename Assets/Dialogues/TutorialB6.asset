@@ -15,13 +15,13 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 45c0c4927c38aa846a408ddbd5eb1430, type: 3}
+  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 44463774843c93a4c8cf7f564d450c08, type: 3}
   dialogue:
   - 'Another expertise you will help in is setting up the ventilation system. '
   - 'Here you will see a colour coded diagram, the same colours have to attach to
     their corresponding colour. '
-  - But its not that simple, you have to make sure that not of the vents overlap
+  - But its not that simple, you have to make sure that the vents don't overlap with
     each other.
-  - When the you've completed every vents attatchment, you win!
+  - When you've completed every vents attatchment, you win!
   - Get this done quick and you will again be rewarded handsomely.

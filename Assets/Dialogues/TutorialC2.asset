@@ -15,11 +15,11 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Emma
   speakerNameColor: {r: 1, g: 0.013207495, b: 0.28803116, a: 1}
-  speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
+  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - Well hey there Sarah!
   - You're showing the rookie around i see
   - 'I''ve just made my rounds with everyone and heard all the good things about
     you rookie '
-  - um idk exactly what to say here...
+  - 'Final dialouge will be finished once score screen is finished. '
