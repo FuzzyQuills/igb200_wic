@@ -108,6 +108,7 @@ public class ElecGame : MonoBehaviour
             if (currentTime <= 0)
             {
                 stars--;
+                if (stars < 1) stars = 1;
                 starText.text = $"{stars} stars";
                 currentTime = playTime;
             }

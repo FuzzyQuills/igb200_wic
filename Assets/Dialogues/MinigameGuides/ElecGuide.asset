@@ -18,9 +18,16 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: e3421043335128945ae80d2a584bdf4f, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - 'This is where tips for the game goes
-
-    (0 of ?)'
-  - 'Look for the folder called Dialogues>MinigameGuides
-
-    (1 of ?)'
+  - In this minigame, you want to balance the total voltage feed to the building!
+    (1 of 7)
+  - On the bottom you have your output voltage and your desired voltage. (2 of 7)
+  - At the top is your starting voltage. The switches add to this starting voltage.
+    (3 of 7)
+  - The tolerance value tells you how much lower and higher your total output voltage
+    can be from the desired voltage to win. (4 of 7)
+  - The goal is to get as close to the desired output voltage as possible. (5 of
+    7)
+  - At least one switch in each row has to be switched on to make a connection to
+    the next layer. (6 of 7)
+  - Once all layers are on, throwing the final switch will reveal your output voltage!
+    (7 of 7)
