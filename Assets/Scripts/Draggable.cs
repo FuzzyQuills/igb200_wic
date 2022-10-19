@@ -21,7 +21,17 @@ public class Draggable : MonoBehaviour
     public IHolder daddy; // for the room tiles
     TileInfo occupado = null; // The tile this draggable is on
 
+    int flatPrice = 20; // Flat price per tile is 20k
     public int price = 0; // Price of this draggable object.
+
+
+    public Vector2[] AdditionalPositions;
+    public Vector2[] GoldPositions;
+    List<TileInfo> AdditionalOccupados = new List<TileInfo>();
+
+    public int nodeStrength = 0;
+
+    public TileInfo standingTile;
 
     /// <summary>
     /// For getting the closest transform to this gameobject
@@ -109,23 +119,113 @@ public class Draggable : MonoBehaviour
     }
 
     public void PlaceDown()
-    {
+    {        
         if (getClosestObject()) // If there is a coordinate within this draggable's collider
         {
             GameObject target = getClosestObject();            
             if (tag == "Tile" && !target.GetComponent<bPosScript>().tileInfo.tiled) // If this draggable is a tile and the target position isn't occupied
             {
-                movementDestination = target.transform.position;
-                target.GetComponent<bPosScript>().tileInfo.tiled = true;
-                target.GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;
-                occupado = target.GetComponent<bPosScript>().tileInfo;
+                // This is where the cost begins. Each tile costs twice as much if it is not shadowed (it overhangs)
+                if (target.GetComponent<bPosScript>().shadowed)
+                {
+                    price = -flatPrice;
+                }
+                else
+                {
+                    price = -flatPrice * 2;
+                }
+                
+                int vibecheck = 0;
+                for (int i = 0; i < AdditionalPositions.Length; i++)
+                {
+                    foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+                    {
+                        if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + AdditionalPositions[i])
+                        {
+                            if (!t.tileInfo.tiled)
+                            {
+                                //Debug.Log("A");
+                                vibecheck++;
+                                // Cost added per tile
+                                if (t.shadowed)
+                                {
+                                    price -= flatPrice;
+                                }
+                                else
+                                {
+                                    price -= flatPrice * 2;
+                                }
+                            }                            
+                        }
+                    }
+                }
+                int goldCheck = 0;
+                for (int i = 0; i < GoldPositions.Length; i++)
+                {
+                    foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+                    {
+                        if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + GoldPositions[i])
+                        {
+                            if (!t.tileInfo.tiled)
+                            {
+                                //Debug.Log("A");
+                                goldCheck++;
+                                // Cost added per tile
+                                price -= flatPrice;
+                            }
+                        }
+                    }
+                }
+                if (vibecheck != AdditionalPositions.Length || goldCheck != GoldPositions.Length)
+                {
+                    CleanDestroy();
+                }
+                else
+                {
+                    FindObjectOfType<AudioManager>().Play("PutdownTile");
+                    movementDestination = target.transform.position - Vector3.forward;
+                    target.GetComponent<bPosScript>().tileInfo.tiled = true;
+                    target.GetComponent<bPosScript>().tileInfo.tileName = gameObject.name;
+                    occupado = target.GetComponent<bPosScript>().tileInfo;
+
+                    for (int i = 0; i < AdditionalPositions.Length; i++)
+                    {
+                        foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+                        {
+                            if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + AdditionalPositions[i])
+                            {
+                                t.tileInfo.tiled = true;
+                                t.tileInfo.tileName = "Fill";
+                                AdditionalOccupados.Add(t.tileInfo);
+                            }
+                        }
+                    }
+                    for (int i = 0; i < GoldPositions.Length; i++)
+                    {
+                        foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+                        {
+                            if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + GoldPositions[i])
+                            {
+                                t.tileInfo.tiled = true;
+                                t.tileInfo.tileName = "Fill";
+                                AdditionalOccupados.Add(t.tileInfo);
+                            }
+                        }
+                    }
+                }
+                fixNodes();
+                standingTile = target.GetComponent<bPosScript>().tileInfo;
             }
-            else if (tag == "Node" && !target.GetComponent<bPosScript>().tileInfo.noded) // If this is a node and the target position isnt 'noded'
+            else if (tag == "Node" && !target.GetComponent<bPosScript>().tileInfo.noded && target.GetComponent<bPosScript>().tileInfo.tiled) // If this is a node and the target position isnt 'noded'
             {
-                movementDestination = target.transform.position;
+                movementDestination = target.transform.position - (Vector3.forward * 2);
                 target.GetComponent<bPosScript>().tileInfo.noded = true;
                 target.GetComponent<bPosScript>().tileInfo.nodeName = gameObject.name;
-                occupado = target.GetComponent<bPosScript>().tileInfo;                
+                occupado = target.GetComponent<bPosScript>().tileInfo;
+
+                GetNodeStrength();
+                
+                standingTile = target.GetComponent<bPosScript>().tileInfo;
             }
             else // Destroy object when conditions arent met
             {
@@ -150,16 +250,39 @@ public class Draggable : MonoBehaviour
             {
                 case "Tile":
                     occupado.tiled = false;
-                    occupado.tileName = null;
+                    occupado.tileName = null;                    
                     break;
                 case "Node":
                     occupado.noded = false;
                     occupado.nodeName = null;
+                    nodeStrength = 0;
                     break;
                 default:
                     break;
             }
         }
+        if (AdditionalOccupados.Count > 0)
+        {
+            switch (tag) // Kinda redundant. For future work
+            {
+                case "Tile":
+                    for (int i = AdditionalOccupados.Count - 1; i >= 0; i--)
+                    {                        
+                        //Debug.Log("B");
+                        AdditionalOccupados[i].tiled = false;
+                        AdditionalOccupados[i].tileName = null;
+                        AdditionalOccupados.RemoveAt(i);
+                    }
+                    break;
+                case "Node":
+                    
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+        standingTile = null;
     }
 
     /// <summary>
@@ -167,7 +290,7 @@ public class Draggable : MonoBehaviour
     /// </summary>
     void CleanDestroy(bool Bool = false)
     {
-        Debug.Log("a");        
+        //Debug.Log("a");        
 
         daddy?.UpdateOpened(Bool);
 
@@ -178,5 +301,34 @@ public class Draggable : MonoBehaviour
         
         
         Destroy(gameObject);
+    }
+
+    public static void fixNodes()
+    {
+        GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+        for (int i = 0; i < nodes.Length; i++)
+        {
+            if (!nodes[i].GetComponent<Draggable>().standingTile.tiled)
+            {
+                nodes[i].GetComponent<Draggable>().CleanDestroy();
+                continue;
+            }
+            nodes[i].GetComponent<Draggable>().GetNodeStrength();
+        }
+    }
+
+    public void GetNodeStrength()
+    {
+        nodeStrength = 0;
+        for (int i = 0; i < AdditionalPositions.Length; i++)
+        {
+            foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+            {
+                if (t.tileInfo.coordinates == getClosestObject().GetComponent<bPosScript>().tileInfo.coordinates + AdditionalPositions[i] && t.tileInfo.tiled == true)
+                {
+                    nodeStrength++;
+                }
+            }
+        }
     }
 }

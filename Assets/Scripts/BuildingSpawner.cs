@@ -6,6 +6,14 @@ public class BuildingSpawner : MonoBehaviour
 {
     TileInfoCollector tIC = null;
 
+
+    public GameObject buildingHolder;
+
+    public GameObject cam;
+
+
+
+
     private void Awake()
     {
         tIC = FindObjectOfType<TileInfoCollector>();
@@ -13,6 +21,9 @@ public class BuildingSpawner : MonoBehaviour
 
     private void Start()
     {
+
+        cam.transform.position += Vector3.up * (0.7f * tIC.currentLevel);
+
         if (tIC)
         {
             //for (int i = 0; i < tIC.tiles.Count; i++)
@@ -28,13 +39,29 @@ public class BuildingSpawner : MonoBehaviour
                 for (int j = 0; j < tIC.nestedList[i].tile.Count; j++)
                 {
                     TileInfo t = tIC.nestedList[i].tile[j];
-                    if (t.tiled)
+                    if (t.tiled && t.tileName != "Fill")
                     {
-                        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(-t.coordinates.x, 0.3f + (i * 0.7f), -t.coordinates.y), Quaternion.identity);
+                        GameObject g = Instantiate(Resources.Load($"BuildingModels/{t.tileName}") as GameObject, new Vector3(t.coordinates.x, (i * 0.7f), -t.coordinates.y), Quaternion.identity);
+                        g.transform.parent = buildingHolder.transform;
                     }
                 }
-            }
-
+            }            
         }
+
+        //Debug.Log(GameObject.FindObjectOfType<GameData>());
+        //GameObject.FindObjectOfType<GameData>().kink = true;
+    }
+
+    private void Update()
+    {
+        Vector3 target = buildingHolder.transform.position;
+        if (tIC != null)
+        {
+            target = buildingHolder.transform.position + (Vector3.up * (0.35f + (0.7f * tIC.currentLevel)));
+        }        
+        cam.transform.LookAt(target);
+        cam.transform.RotateAround(buildingHolder.transform.position, Vector3.up, 15 * Time.deltaTime);
+        
+        //buildingHolder.transform.Rotate(Vector3.up, 15 * Time.deltaTime);
     }
 }

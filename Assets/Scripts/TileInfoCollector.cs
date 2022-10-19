@@ -49,7 +49,7 @@ public class TileInfoCollector : MonoBehaviour
         nestedList.Add(new testClass());
         foreach (bPosScript b in FindObjectsOfType<bPosScript>())
         {
-            if (b.tileInfo.tiled)
+            if (b.tileInfo.tiled && b.tileInfo.tileName != "Fill")
             {
                 nestedList[currentLevel].tile.Add(b.tileInfo);
             }            
