@@ -13,8 +13,9 @@ public class PlumbingGame : MonoBehaviour
 
     public GameObject[] generates; // A list of pipe gameobjects to be spawned from.
 
-    TileInfoCollector codeMan;
-    GameData gd;
+    GameObject codeMan;
+    TileInfoCollector tIC;
+    public GameData gd;
 
     int stars = 5;
     public float maxTime = 15;
@@ -24,24 +25,27 @@ public class PlumbingGame : MonoBehaviour
     public TMP_Text starText;
     public TMP_Text winText;
 
+    int rewardStrength = 1;
+
     private void Start()
     {
         // Game Data stuff
-        gd = GameObject.FindObjectOfType<GameData>();
-        codeMan = GameObject.FindObjectOfType<TileInfoCollector>();
-        
+        codeMan = GameObject.Find("CodeMan");
+        tIC = codeMan.GetComponent<TileInfoCollector>();
+        gd = codeMan.GetComponent<GameData>();
+
+
         if (gd)
         {
             gd.expenditure = 0;            
         }
-        if (codeMan)
+        if (tIC)
         {
-            maxTime = maxTime - codeMan.currentLevel;
-        }
-       
+            maxTime = maxTime - tIC.currentLevel;            
+        }       
 
         //// Script for scaling the game's pipes and size
-        
+
         //if (codeMan != null)
         //{
         //    gridX = gridX + codeMan.currentLevel * 2;
@@ -85,7 +89,7 @@ public class PlumbingGame : MonoBehaviour
 
 
         // Delete some boxes around pipes. Amount reduces with game level.
-        for (int i = 0; i < 10 - codeMan.currentLevel; i++)
+        for (int i = 0; i < 10 - tIC.currentLevel; i++)
         {
             while (true)
             {
@@ -149,16 +153,17 @@ public class PlumbingGame : MonoBehaviour
             {                
                 if (p.pipeScript.mysteryCube == null && p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
                 {
+                    int reward = GameData.Reward(stars);
                     // Display win message
                     timerStopper = true; // Stop timer
                     Debug.Log("Win!");
                     GameObject.Find("Squibble").GetComponent<TMP_Text>().text = "You Win!";
-                    winText.text = $"{stars} Stars!<br><color=green>{(int)(20 * 9 * (0.5 + (0.2 * stars)))}k awarded!";
+                    winText.text = $"{stars} Stars!<br><color=green>{reward}k awarded!";
                     // Reward finances
                     gd = GameObject.FindObjectOfType<GameData>();
                     if (gd)
                     {
-                        gd.expenditure += (int)(20 * 9 * (0.5 + (0.2 * stars))); // Reward assumed on 9 tiles at 3 stars. To Be Updated
+                        gd.expenditure += reward;
                     }
                     // Disable interactions with pipes, make connecting pipes blue
                     foreach (PipeData pp in pipes)

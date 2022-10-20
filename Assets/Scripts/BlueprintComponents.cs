@@ -44,7 +44,7 @@ public class BlueprintComponents : MonoBehaviour
         {
             count += nodes[i].GetComponent<Draggable>().nodeStrength;
         }
-        nodeText.text = $"Potential Reward:<br>${(count * 20) * 0.7f}k to ${(count * 20) * 1.5f}k";
+        nodeText.text = $"Potential Reward:<br>${GameData.Reward(5,count)}k";
 
         
 
@@ -158,26 +158,26 @@ public class BlueprintComponents : MonoBehaviour
     public void CreatePlaylist()
     {
         List<string> playlist = new List<string>();
-        NodeHolderScript[] nhs = GameObject.FindObjectsOfType<NodeHolderScript>();
-        foreach (NodeHolderScript zoop in nhs)
+        List<int> playlistStr = new List<int>();
+        GameObject[] nodes = GameObject.FindGameObjectsWithTag("Node");
+        foreach (GameObject g in nodes)
         {
-            for (int i = 0; i < zoop.nodesMax; i++)
-            {
-                switch (zoop.nodeName)
-                {
-                    case "nodeVents":
-                        playlist.Add("VentGame");
-                        break;
-                    case "nodePlumbing":
-                        playlist.Add("PlumbingGame");
-                        break;
-                    case "nodeElectricity":
-                        playlist.Add("ElecGame");
-                        break;
-                    default:
-                        break;
-                }
+            Draggable d = g.GetComponent<Draggable>();
+            playlistStr.Add(d.nodeStrength);
 
+            switch (d.standingTile.nodeName)
+            {
+                case "nodeVents":
+                    playlist.Add("VentGame");                    
+                    break;
+                case "nodePlumbing":
+                    playlist.Add("PlumbingGame");
+                    break;
+                case "nodeElectricity":
+                    playlist.Add("ElecGame");
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -185,13 +185,20 @@ public class BlueprintComponents : MonoBehaviour
         for (int i = 0; i < playlist.Count; i++)
         {
             string temp = playlist[i];
+            int tempStr = playlistStr[i];
+            
             int randomIndex = Random.Range(i, playlist.Count);
+            
             playlist[i] = playlist[randomIndex];
+            playlistStr[i] = playlistStr[randomIndex];
             playlist[randomIndex] = temp;
+            playlistStr[randomIndex] = tempStr;
         }
 
         // Give list to the codeman as an array
         GameObject.FindObjectOfType<GameData>().playlist = playlist.ToArray();
+        GameObject.FindObjectOfType<GameData>().playlistStr = playlistStr.ToArray();
+
     }
 
 }

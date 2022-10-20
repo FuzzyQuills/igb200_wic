@@ -23,7 +23,6 @@ public class GameData : MonoBehaviour
 
     public bool kink = true; // Temporary fix to a benign issue.
 
-    public List<string> minigamePlaylist = new List<string>();
 
     public string[] playlist;
     public int[] playlistStr; // The amount of reward given upon game completion (based on node position)
@@ -147,5 +146,28 @@ public class GameData : MonoBehaviour
             SceneManager.LoadScene(playlist[playlistOrder]);
             playlistOrder++;
         }        
+    }
+
+    /// <summary>
+    /// A quick and easy way to keep track of how much a minigame should award
+    /// </summary>
+    /// <param name="stars">The amount of stars the player has accomplished</param>
+    /// <param name="strength">Takes the position of the game in the playlist's strength by default</param>
+    /// <returns></returns>
+    public static int Reward(int stars, int strength = -1)
+    {
+        // Get the strength of the reward based on the minigame's position in the playlist, if -1
+        if (strength == -1)
+        {
+            GameData gd = GameObject.Find("CodeMan").GetComponent<GameData>();
+            strength = gd.playlistStr[gd.playlistOrder - 1];
+        }        
+        // The reward granted by one single tilespace
+        int baseScore = 18;
+        // The maximum and minimum multipliers for stars
+        float starMultMin = 0.5f;
+        float starMultMax = 1.7f;
+        
+        return (int)((baseScore * strength) * (starMultMin + ((starMultMax - starMultMin) / 5) * stars));
     }
 }

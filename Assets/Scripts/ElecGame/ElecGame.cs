@@ -144,7 +144,7 @@ public class ElecGame : MonoBehaviour
                 voltageReward *= 2.0f;
                 // Every 6 seconds, a star is lost, so it's safe to assume the reward would be 
                 // stars * 6 multiplied by a constant. 
-                int prizeMoney = Mathf.RoundToInt((stars * (playTime / 5.0f)) * voltageReward * 20.0f); 
+                int prizeMoney = GameData.Reward(stars); //Inserted by Coen, this should keep rewards uniform between minigames
                 finalVoltageLabel.text = string.Format("SUCCESS!\nFinal Voltage: {0:0.00}V\n{1}K awarded!", 
                                                         finalVoltage, prizeMoney);
                 finalSwitch.disableBreaker = true;

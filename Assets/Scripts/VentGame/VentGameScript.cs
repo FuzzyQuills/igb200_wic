@@ -108,16 +108,18 @@ public class VentGameScript : MonoBehaviour
                 i++;
             }
         }
+        // Win condition
         if (i >= ventNodes.Count / 2)
         {
+            int moolah = GameData.Reward(stars);
             Debug.Log("Win");
-            winText.text = $"{stars} Stars!<br><color=green>{(int)(20 * 9 * (0.5 + (0.2 * stars)))}k awarded!";
+            winText.text = $"{stars} Stars!<br><color=green>{moolah}k awarded!";
 
             // Reward finances
             GameData gd = GameObject.FindObjectOfType<GameData>();
             if (gd)
             {
-                gd.expenditure += (int)(20 * 9 * (0.5 + (0.2 * stars))); // Reward assumed on 9 tiles at 3 stars. To Be Updated
+                gd.expenditure += moolah;
             }
             // Stop recursion
             stopTheGame = true;
