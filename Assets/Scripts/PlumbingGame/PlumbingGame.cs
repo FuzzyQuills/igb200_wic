@@ -25,8 +25,6 @@ public class PlumbingGame : MonoBehaviour
     public TMP_Text starText;
     public TMP_Text winText;
 
-    int rewardStrength = 1;
-
     private void Start()
     {
         // Game Data stuff

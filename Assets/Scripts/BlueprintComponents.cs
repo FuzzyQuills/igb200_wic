@@ -34,6 +34,7 @@ public class BlueprintComponents : MonoBehaviour
         gd = tIC.transform.GetComponent<GameData>();
         gd.kink = true;
         gd.playlistOrder = 0;
+        gd.moneyChanges = new List<int>();
     }
 
     private void Update()

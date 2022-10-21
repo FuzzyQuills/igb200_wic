@@ -11,7 +11,7 @@ public class ElecNodeLayer {
 public class ElecGame : MonoBehaviour
 {
     [Header("ElecGame dependencies.")]
-    private TileInfoCollector c_codeman;
+    private TileInfoCollector c_tileInfoCollector;
     private GameData c_gd;
 
     public GameObject RootTransform; // needed as otherwise ElecNodes spawn way out of bounds!
@@ -52,13 +52,13 @@ public class ElecGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        c_gd = FindObjectOfType<GameData>();
-        c_codeman = FindObjectOfType<TileInfoCollector>();
+        c_gd = GameObject.Find("CodeMan").GetComponent<GameData>();
+        c_tileInfoCollector = GameObject.Find("CodeMan").GetComponent<TileInfoCollector>();
         if (c_gd) {
             c_gd.expenditure = 0;
         }
-        if (c_codeman) {
-            playTime -= c_codeman.currentLevel;
+        if (c_tileInfoCollector) {
+            playTime -= c_tileInfoCollector.currentLevel;
         }
 
         desiredVoltage = Random.Range(5.0f, 12.0f);
@@ -69,10 +69,10 @@ public class ElecGame : MonoBehaviour
         float voltageStride = desiredVoltage / startingVoltage;
 
         // Generate voltage tolerance value.
-        if (c_codeman.currentLevel > 0) {
+        if (c_tileInfoCollector.currentLevel > 0) {
             voltageTolerance = 4.0f; // TODO: change to difficulty based values later. 
         } else {
-            voltageTolerance = 4.0f / c_codeman.currentLevel; // TODO: change to difficulty based values later. 
+            voltageTolerance = 4.0f / c_tileInfoCollector.currentLevel; // TODO: change to difficulty based values later. 
         }
 
         // Compute grid offsets for the loops.
