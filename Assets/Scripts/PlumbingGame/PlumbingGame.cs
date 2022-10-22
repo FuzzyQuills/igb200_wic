@@ -38,7 +38,7 @@ public class PlumbingGame : MonoBehaviour
             gd.expenditure = 0;            
         }
         if (tIC)
-        {
+        {            
             maxTime = maxTime - tIC.currentLevel;            
         }       
 

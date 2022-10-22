@@ -11,9 +11,11 @@ public class ElecNode : MonoBehaviour
 
     public void Update () {
         if (breaker.IsOn) {
-            voltageReading.text = string.Format("ON\n{0:0.00}V",voltageDiff);
+            //voltageReading.text = string.Format("ON\n{0:0.00}V",voltageDiff);
+            voltageReading.text = string.Format("{0:0}V",voltageDiff);
         } else {
-            voltageReading.text = string.Format("OFF\n{0:0.00}V",voltageDiff);
+            //voltageReading.text = string.Format("OFF\n{0:0.00}V",voltageDiff);
+            voltageReading.text = string.Format("{0:0}V",voltageDiff);
         }
     }
 }

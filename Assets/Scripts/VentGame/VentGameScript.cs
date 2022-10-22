@@ -20,9 +20,15 @@ public class VentGameScript : MonoBehaviour
     
     public List<VentHeadScript> ventNodes = new List<VentHeadScript>();
 
+    // Win Screen Stuff
     public TMP_Text winText;
     int stars = 5;
     bool stopTheGame = false;
+    public float maxTime = 15;
+    float currentTime = 15;
+    bool timerStopper = false;
+    public Slider timerSlider;
+    public TMP_Text starText;
 
     private void Start()
     {
@@ -31,14 +37,27 @@ public class VentGameScript : MonoBehaviour
         {
             TileInfoCollector tic = GameObject.FindObjectOfType<TileInfoCollector>();
 
-            if (numberOfVents + tic.currentLevel < 10) // There are 9 colors. Plus adding any more nodes would probably not be fun.
+            if (numberOfVents + tic.currentLevel < 9) // There are 9 colors. Plus adding any more nodes would probably not be fun.
             {
                 numberOfVents += tic.currentLevel;
             }
             else
             {
-                numberOfVents = 9;
+                numberOfVents = 8;
             }
+            
+            // Reduce time based on the current level
+            if (maxTime - (tic.currentLevel * 0.5f) > 3)
+            {
+                maxTime = maxTime - (tic.currentLevel * 0.5f);
+            }
+            else
+            {
+                maxTime = 3;
+            }
+            currentTime = maxTime;
+            timerSlider.maxValue = maxTime;
+
 
         }
 
@@ -93,7 +112,23 @@ public class VentGameScript : MonoBehaviour
     private void Update()
     {
         if (!stopTheGame)
-        {
+        {            
+            timerSlider.value = currentTime;
+            if (currentTime <= 0)
+            {
+                if (stars > 1)
+                {
+                    currentTime = maxTime;
+                    stars--;
+                    starText.text = $"{stars} stars";
+                }
+            }
+            else
+            {
+                currentTime -= Time.deltaTime;
+            }
+
+
             CheckForWin();
         }        
     }

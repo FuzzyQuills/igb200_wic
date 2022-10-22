@@ -40,6 +40,11 @@ public class ElecGame : MonoBehaviour
     public float voltageTolerance;
     private bool voltageUpOrDown;
 
+    // Coen's inserts. move at fruition
+    public TMP_Text requiredVoltageText;
+    public TMP_Text currentVoltageText;
+    public TMP_Text winText;
+
     float ComputeLayerVoltage (ElecNodeLayer layer) {
         float accumulatedNodeVoltages = 0.0f;
         foreach (ElecNode node in layer.nodes) {
@@ -61,18 +66,19 @@ public class ElecGame : MonoBehaviour
             playTime -= c_tileInfoCollector.currentLevel;
         }
 
-        desiredVoltage = Random.Range(5.0f, 12.0f);
-        startingVoltage = Random.Range(desiredVoltage / 4, desiredVoltage / 2);
+        desiredVoltage = Random.Range(6.0f, 20.0f);        
+        startingVoltage = Random.Range(0, desiredVoltage / 3);
         startingVoltageLabel.text = string.Format("Starting Voltage: {0:0.00}", startingVoltage);
 
         // Compute voltage stride from desired voltage.
         float voltageStride = desiredVoltage / startingVoltage;
 
         // Generate voltage tolerance value.
+        float vTdiff = voltageTolerance / (c_tileInfoCollector.currentLevel * 0.5f);
         if (c_tileInfoCollector.currentLevel > 0) {
-            voltageTolerance = 4.0f; // TODO: change to difficulty based values later. 
+            voltageTolerance = vTdiff; // TODO: change to difficulty based values later. 
         } else {
-            voltageTolerance = 4.0f / c_tileInfoCollector.currentLevel; // TODO: change to difficulty based values later. 
+            voltageTolerance = vTdiff / c_tileInfoCollector.currentLevel; // TODO: change to difficulty based values later. 
         }
 
         // Compute grid offsets for the loops.
@@ -89,12 +95,13 @@ public class ElecGame : MonoBehaviour
                 Vector3 newPosition = new Vector3((xstride * x) - (playAreaDimensions.x / 2), (ystride * y) - (playAreaDimensions.y / 2), 0);
                 GameObject temp = Instantiate<GameObject>(ElecNodePrefab, newPosition, ElecNodePrefab.transform.rotation);
                 temp.transform.SetParent(RootTransform.transform, false);
-                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(0.0f, voltageStride));
+                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(0, voltageStride));
                 voltageUpOrDown = !voltageUpOrDown;
                 newLayer.nodes.Add(temp.GetComponent<ElecNode>());
             }
             layers.Add(newLayer);
         }
+        requiredVoltageText.text = $"VoltageReq:<br>{(int)desiredVoltage - voltageTolerance}V to {(int)desiredVoltage + voltageTolerance}V";
         currentTime = playTime;
     }
 
@@ -104,7 +111,7 @@ public class ElecGame : MonoBehaviour
         if (!gameWon) {
             currentTime -= Time.deltaTime;
             timeSlider.value = currentTime / playTime;
-            Debug.Log(string.Format("{0}", currentTime / playTime));
+            //Debug.Log(string.Format("{0}", currentTime / playTime));
             if (currentTime <= 0)
             {
                 stars--;
@@ -117,27 +124,33 @@ public class ElecGame : MonoBehaviour
         float accumulatedVoltage = 0.0f;
         foreach (ElecNodeLayer layer in layers) {
             float layerVoltage = ComputeLayerVoltage(layer);
-            
-            if (layerVoltage != 0.0f) {
-                accumulatedVoltage += layerVoltage;
-            } else {
-                accumulatedVoltage = 0.0f;
-                break;
-            }
+
+            //if (layerVoltage != 0.0f) {
+            //    accumulatedVoltage += layerVoltage;
+            //} else {
+            //    accumulatedVoltage = 0.0f;
+            //    break;
+            //}
+
+            accumulatedVoltage += layerVoltage;
         }
+        currentVoltageText.text = $"Currently:<br>{(int)startingVoltage + accumulatedVoltage}V";
         
         if (finalSwitch.IsOn) {
-            finalVoltage = accumulatedVoltage > 0.0f ? startingVoltage + accumulatedVoltage : 0.0f;
-            if (finalVoltage > desiredVoltage + voltageTolerance) {
-                Debug.Log("Blowout!!!");
-                finalVoltageLabel.text = string.Format("Voltage: OVERLOAD\nDesired Voltage: {1:0.00}V\nTolerance: {2:0.00}V", finalVoltage, desiredVoltage, voltageTolerance);
-                finalSwitch.IsOn = false;
-            } else {
-                finalVoltageLabel.text = string.Format("Voltage: {0:0.00}V\nDesired Voltage: {1:0.00}V\nTolerance: {2:0.00}V", finalVoltage, desiredVoltage, voltageTolerance);
-            }
+            finalVoltage = (accumulatedVoltage > 0.0f ? startingVoltage + accumulatedVoltage : 0.0f);
+
+
+            //if (finalVoltage > desiredVoltage + voltageTolerance) {
+            //    Debug.Log("Blowout!!!");
+            //    finalVoltageLabel.text = string.Format("Voltage: OVERLOAD\nDesired Voltage: {1:0.00}V\nTolerance: {2:0.00}V", finalVoltage, desiredVoltage, voltageTolerance);
+            //    finalSwitch.IsOn = false;
+            //} else {
+            //    finalVoltageLabel.text = string.Format("Voltage: {0:0.00}V\nDesired Voltage: {1:0.00}V\nTolerance: {2:0.00}V", finalVoltage, desiredVoltage, voltageTolerance);
+            //}
 
             // test for win condition.
-            if (finalVoltage > desiredVoltage - voltageTolerance && finalVoltage < desiredVoltage + voltageTolerance) {
+            if (finalVoltage > (desiredVoltage - voltageTolerance) && finalVoltage < (desiredVoltage + voltageTolerance)) {
+                Debug.Log($"({desiredVoltage - voltageTolerance}) {finalVoltage} ({desiredVoltage + voltageTolerance})");
                 gameWon = true;
                 float voltageReward = 1.0f / (desiredVoltage - finalVoltage);
                 if (voltageReward < 0) voltageReward = -voltageReward;
@@ -145,8 +158,8 @@ public class ElecGame : MonoBehaviour
                 // Every 6 seconds, a star is lost, so it's safe to assume the reward would be 
                 // stars * 6 multiplied by a constant. 
                 int prizeMoney = GameData.Reward(stars); //Inserted by Coen, this should keep rewards uniform between minigames
-                finalVoltageLabel.text = string.Format("SUCCESS!\nFinal Voltage: {0:0.00}V\n{1}K awarded!", 
-                                                        finalVoltage, prizeMoney);
+                //finalVoltageLabel.text = string.Format("SUCCESS!\nFinal Voltage: {0:0.00}V\n{1}K awarded!", finalVoltage, prizeMoney);
+                winText.text = $"{stars} Stars!<br><color=green>{prizeMoney}k awarded!";
                 finalSwitch.disableBreaker = true;
                 if (c_gd && !moneyRewarded) {
                     c_gd.expenditure += prizeMoney;
@@ -157,10 +170,32 @@ public class ElecGame : MonoBehaviour
                         node.breaker.disableBreaker = true;
                     }
                 }
+                requiredVoltageText.text = "VOLTAGE:<color=green><br>PERFECT!";
             }
-        } else {
-            finalVoltageLabel.text = string.Format("Voltage: {0:0.00}V\nDesired Voltage: {1:0.00}V\nTolerance: {2:0.00}V", finalVoltage, desiredVoltage, voltageTolerance);
+            else
+            {
+                finalSwitch.IsOn = false;
+                StartCoroutine(GameError(finalVoltage));
+            }
+        } 
+    }
+
+    IEnumerator GameError(float finalVoltage)
+    {
+        string remember = requiredVoltageText.text;
+
+        if (finalVoltage < (desiredVoltage - voltageTolerance))
+        {
+            requiredVoltageText.text = "VOLTAGE:<color=red><br>TOO LOW!";
         }
+        else
+        {
+            requiredVoltageText.text = "VOLTAGE:<color=red><br>TOO HIGH!";
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        requiredVoltageText.text = remember;
+        yield return null;
     }
 
     void OnDrawGizmos () {

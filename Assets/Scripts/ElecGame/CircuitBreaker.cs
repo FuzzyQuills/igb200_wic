@@ -12,6 +12,14 @@ public class CircuitBreaker : MonoBehaviour
     void Update()
     {
         anim.SetBool("OnOrOff", IsOn);
+        if (IsOn)
+        {
+            transform.GetChild(1).GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        else
+        {
+            transform.GetChild(1).GetComponent<Renderer>().material.color = Color.white;
+        }
     }
 
     public void OnMouseDown() {
