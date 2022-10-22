@@ -320,8 +320,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
         type: 3}
+      propertyPath: playlistOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
       propertyPath: moneyUI_Canvas
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
+      propertyPath: playlist.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
+      propertyPath: playlist.Array.data[0]
+      value: PlumbingGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
+      propertyPath: playlistStr.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
+      propertyPath: moneyChanges.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3369865413029567146, guid: 219411410c479ee4fb028c9f00bf046c,
+        type: 3}
+      propertyPath: playlistStr.Array.data[0]
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3369865413029567147, guid: 219411410c479ee4fb028c9f00bf046c,
         type: 3}
@@ -686,8 +716,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -721,7 +752,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1760,8 +1791,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1795,7 +1827,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1971,8 +2003,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: 5 stars
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2006,7 +2039,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 4
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2348,6 +2381,7 @@ MonoBehaviour:
   - {fileID: 3890379415265372090, guid: 8c514407b73efc145a16b463c160d616, type: 3}
   - {fileID: 3890379415265372090, guid: 21337f80e854aee42ad2f3defa868a02, type: 3}
   - {fileID: 3890379415265372090, guid: be72cb68c2c3e4542879d30f387cd6fe, type: 3}
+  gd: {fileID: 0}
   maxTime: 15
   timerSlider: {fileID: 1086263059}
   starText: {fileID: 1338850482}
@@ -2552,15 +2586,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.92156863, g: 1, b: 0.8627451, a: 0.3137255}
+  m_Color: {r: 0.92156863, g: 1, b: 0.8627451, a: 0.5019608}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: c5b4b5359d2d24e418eeb025a59a552e, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3056,8 +3090,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: NEXT
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3091,7 +3126,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3191,8 +3226,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: END
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3226,7 +3262,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3326,8 +3362,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Connect The Pipes!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3361,7 +3398,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: 3
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
