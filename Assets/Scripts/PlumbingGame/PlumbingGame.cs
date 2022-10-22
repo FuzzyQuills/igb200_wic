@@ -162,6 +162,7 @@ public class PlumbingGame : MonoBehaviour
                     if (gd)
                     {
                         gd.expenditure += reward;
+                        gd.starsOnLevel[gd.playlistOrder - 1] = stars;
                     }
                     // Disable interactions with pipes, make connecting pipes blue
                     foreach (PipeData pp in pipes)
@@ -255,11 +256,6 @@ public class PlumbingGame : MonoBehaviour
                 p.neighbours[3] = pipe.pipeScript;
             }
         }
-    }
-
-    void Win()
-    {
-
     }
 }
 

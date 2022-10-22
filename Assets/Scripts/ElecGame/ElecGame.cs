@@ -163,6 +163,7 @@ public class ElecGame : MonoBehaviour
                 finalSwitch.disableBreaker = true;
                 if (c_gd && !moneyRewarded) {
                     c_gd.expenditure += prizeMoney;
+                    c_gd.starsOnLevel[c_gd.playlistOrder - 1] = stars;
                     moneyRewarded = true;
                 }
                 foreach (ElecNodeLayer layer in layers) {
@@ -171,6 +172,7 @@ public class ElecGame : MonoBehaviour
                     }
                 }
                 requiredVoltageText.text = "VOLTAGE:<color=green><br>PERFECT!";
+                
             }
             else
             {

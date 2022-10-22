@@ -164,6 +164,10 @@ public class BlueprintComponents : MonoBehaviour
         foreach (GameObject g in nodes)
         {
             Draggable d = g.GetComponent<Draggable>();
+            if (d.nodeStrength == 0) // A pity buff. Stops a floor granting a reward of 0
+            {
+                d.nodeStrength = 1;
+            }
             playlistStr.Add(d.nodeStrength);
 
             switch (d.standingTile.nodeName)
@@ -199,6 +203,7 @@ public class BlueprintComponents : MonoBehaviour
         // Give list to the codeman as an array
         GameObject.FindObjectOfType<GameData>().playlist = playlist.ToArray();
         GameObject.FindObjectOfType<GameData>().playlistStr = playlistStr.ToArray();
+        GameObject.FindObjectOfType<GameData>().starsOnLevel = new int[playlist.Count];
 
     }
 

@@ -12,7 +12,7 @@ public class Draggable : MonoBehaviour
     public Vector3 lastPosition;
     public Vector3 originalPos;
 
-    private float movementTime = 15f;
+    //private float movementTime = 15f;
     private Vector3? movementDestination;
 
     public List<GameObject> objectsWithinRange;
@@ -83,7 +83,8 @@ public class Draggable : MonoBehaviour
             }
             else
             {
-                transform.position = Vector3.Lerp(transform.position,movementDestination.Value, movementTime * Time.deltaTime);
+                // Enable the comment if you want the smooth movmement back. It makes small lerps jiggle though
+                transform.position = movementDestination.Value; //Vector3.Lerp(transform.position,movementDestination.Value, movementTime * Time.deltaTime);
             }
         }
     }
@@ -119,7 +120,8 @@ public class Draggable : MonoBehaviour
     }
 
     public void PlaceDown()
-    {        
+    {
+        
         if (getClosestObject()) // If there is a coordinate within this draggable's collider
         {
             GameObject target = getClosestObject();            
@@ -200,6 +202,7 @@ public class Draggable : MonoBehaviour
                             }
                         }
                     }
+                    // Golds
                     for (int i = 0; i < GoldPositions.Length; i++)
                     {
                         foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
@@ -207,7 +210,7 @@ public class Draggable : MonoBehaviour
                             if (t.tileInfo.coordinates == target.GetComponent<bPosScript>().tileInfo.coordinates + GoldPositions[i])
                             {
                                 t.tileInfo.tiled = true;
-                                t.tileInfo.tileName = "Fill";
+                                t.tileInfo.tileName = "FillGold";
                                 AdditionalOccupados.Add(t.tileInfo);
                             }
                         }
@@ -253,6 +256,7 @@ public class Draggable : MonoBehaviour
                     occupado.tileName = null;                    
                     break;
                 case "Node":
+                    ClearNodeStrength();
                     occupado.noded = false;
                     occupado.nodeName = null;
                     nodeStrength = 0;
@@ -313,7 +317,7 @@ public class Draggable : MonoBehaviour
                 nodes[i].GetComponent<Draggable>().CleanDestroy();
                 continue;
             }
-            nodes[i].GetComponent<Draggable>().GetNodeStrength();
+            //nodes[i].GetComponent<Draggable>().GetNodeStrength();
         }
     }
 
@@ -326,9 +330,48 @@ public class Draggable : MonoBehaviour
             {
                 if (t.tileInfo.coordinates == getClosestObject().GetComponent<bPosScript>().tileInfo.coordinates + AdditionalPositions[i] && t.tileInfo.tiled == true)
                 {
-                    nodeStrength++;
+                    if (!t.tileInfo.nodeInfluenced)
+                    { 
+                        t.tileInfo.nodeInfluenced = true;
+                        nodeStrength++;
+                    }
+                    
                 }
             }
         }
+    }
+    /// <summary>
+    /// Should be triggered on pickup / deletion
+    /// </summary>
+    public void ClearNodeStrength()
+    {
+        if (nodeStrength > 0)
+        {
+            //for (int i = 0; i < AdditionalPositions.Length; i++)
+            //{
+            //    foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+            //    {
+            //        if (t.tileInfo.coordinates == getClosestObject().GetComponent<bPosScript>().tileInfo.coordinates + AdditionalPositions[i] && t.tileInfo.tiled == true)
+            //        {
+            //            t.tileInfo.nodeInfluenced = false;
+            //        }
+            //    }
+            //}
+            foreach (bPosScript t in GameObject.FindObjectsOfType<bPosScript>())
+            {
+                t.tileInfo.nodeInfluenced = false;
+            }
+            foreach (Draggable d in GameObject.FindObjectsOfType<Draggable>())
+            {
+                if (d != this)
+                {
+                    if (d.transform.tag == "Node")
+                    {
+                        d.GetNodeStrength();
+                    }
+                }                
+            }
+
+        }        
     }
 }

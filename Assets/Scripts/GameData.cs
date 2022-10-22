@@ -26,6 +26,7 @@ public class GameData : MonoBehaviour
 
     public string[] playlist;
     public int[] playlistStr; // The amount of reward given upon game completion (based on node position)
+    public int[] starsOnLevel; // For calculating if you get five stars
     public int playlistOrder = 0;
 
     private void Awake()
@@ -70,13 +71,6 @@ public class GameData : MonoBehaviour
     private void Update()
     {
         UpdateMoneyUI();
-
-        // Game over if your money reaches zero. Typically happens after the SaveMoney is called
-        if (money < 0)
-        {
-            SceneManager.LoadScene("GameOver");
-            money = 0;
-        }
     }
 
     /// <summary>
@@ -166,7 +160,7 @@ public class GameData : MonoBehaviour
         int baseScore = 18;
         // The maximum and minimum multipliers for stars
         float starMultMin = 0.5f;
-        float starMultMax = 1.7f;
+        float starMultMax = 1.5f;
         
         return (int)((baseScore * strength) * (starMultMin + ((starMultMax - starMultMin) / 5) * stars));
     }
