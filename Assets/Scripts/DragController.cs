@@ -67,11 +67,10 @@ public class DragController : MonoBehaviour
     // Initiates dragging a tile.
     void InitDrag()
     {
-        FindObjectOfType<AudioManager>().Play("PickupTile");        
+        FindObjectOfType<AudioManager>().Play("PickupTile");
         lastDragged.lastPosition = lastDragged.transform.position;
         lastDragged.EmptyTile();
         UpdateDragStatus(true);
-        
     }
 
     // Updates a dragged tile. 

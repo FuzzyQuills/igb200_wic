@@ -26,7 +26,7 @@ public class VentGameScript : MonoBehaviour
     bool stopTheGame = false;
     public float maxTime = 15;
     float currentTime = 15;
-    //bool timerStopper = false;
+    bool timerStopper = false;
     public Slider timerSlider;
     public TMP_Text starText;
 
@@ -155,7 +155,6 @@ public class VentGameScript : MonoBehaviour
             if (gd)
             {
                 gd.expenditure += moolah;
-                gd.starsOnLevel[gd.playlistOrder - 1] = stars;
             }
             // Stop recursion
             stopTheGame = true;
