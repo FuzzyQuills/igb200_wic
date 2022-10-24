@@ -71,7 +71,7 @@ public class ElecGame : MonoBehaviour
         startingVoltageLabel.text = string.Format("Starting Voltage: {0:0.00}", startingVoltage);
 
         // Compute voltage stride from desired voltage.
-        float voltageStride = desiredVoltage / startingVoltage;
+        float voltageStride = desiredVoltage / 6;
 
         // Generate voltage tolerance value.
         float vTdiff = voltageTolerance / (c_tileInfoCollector.currentLevel * 0.5f);
@@ -95,7 +95,7 @@ public class ElecGame : MonoBehaviour
                 Vector3 newPosition = new Vector3((xstride * x) - (playAreaDimensions.x / 2), (ystride * y) - (playAreaDimensions.y / 2), 0);
                 GameObject temp = Instantiate<GameObject>(ElecNodePrefab, newPosition, ElecNodePrefab.transform.rotation);
                 temp.transform.SetParent(RootTransform.transform, false);
-                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(0, voltageStride));
+                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(1, voltageStride));
                 voltageUpOrDown = !voltageUpOrDown;
                 newLayer.nodes.Add(temp.GetComponent<ElecNode>());
             }
@@ -149,7 +149,7 @@ public class ElecGame : MonoBehaviour
             //}
 
             // test for win condition.
-            if (finalVoltage > (desiredVoltage - voltageTolerance) && finalVoltage < (desiredVoltage + voltageTolerance)) {
+            if (finalVoltage >= (desiredVoltage - voltageTolerance) && finalVoltage <= (desiredVoltage + voltageTolerance)) {
                 Debug.Log($"({desiredVoltage - voltageTolerance}) {finalVoltage} ({desiredVoltage + voltageTolerance})");
                 gameWon = true;
                 float voltageReward = 1.0f / (desiredVoltage - finalVoltage);
