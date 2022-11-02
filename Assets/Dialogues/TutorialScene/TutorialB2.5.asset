@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Sarah
   speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
-  speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
+  speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - 'Hey Stephanie, what great timing, sorry about the hard hat thing, im just not
