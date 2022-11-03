@@ -257,7 +257,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart Tutorial
+  m_text: Intro
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
   m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,

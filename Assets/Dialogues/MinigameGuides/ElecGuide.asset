@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.3
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.7921569, b: 0.4745098, a: 1}
-  speakerIcon: {fileID: 21300000, guid: e3421043335128945ae80d2a584bdf4f, type: 3}
+  speakerIcon: {fileID: 21300000, guid: e86b64704dda5004aa5f42a68a8adfd9, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - In this minigame, you want to balance the total voltage feed to the floor! (1

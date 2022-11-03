@@ -33,3 +33,5 @@ THIRD PARTY ASSETS
 -Skybox
 	Free Stylized Skybox
 	https://assetstore.unity.com/packages/2d/textures-materials/sky/free-stylized-skybox-212257
+-3D ASSETS
+	3D Game Props, Wissam El Hajj, assetstore.unity.com

@@ -16,16 +16,15 @@ public class CircuitBreaker : MonoBehaviour
         if (IsOn)
         {
             transform.GetChild(1).GetComponent<Renderer>().material.color = Color.yellow;
-            FindObjectOfType<AudioManager>().Play("ButtonClick");
         }
         else
         {
-            transform.GetChild(1).GetComponent<Renderer>().material.color = Color.white;
-            FindObjectOfType<AudioManager>().Play("ButtonClick");
+            transform.GetChild(1).GetComponent<Renderer>().material.color = Color.white;            
         }
     }
 
     public void OnMouseDown() {
         if (!disableBreaker) IsOn = !IsOn;
+        FindObjectOfType<AudioManager>().Play("ButtonClick");
     }
 }
