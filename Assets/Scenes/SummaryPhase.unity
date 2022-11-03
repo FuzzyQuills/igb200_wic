@@ -478,7 +478,7 @@ RectTransform:
   m_Children:
   - {fileID: 1551955177}
   m_Father: {fileID: 1943577653}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1638,7 +1638,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1902611895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f093a458e1fea74491e13de147f429f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  money: 826
+  money: 1
   expenditure: 0
   moneyUI_Canvas: {fileID: 0}
   moneyChanges: e4fdffffb700000000000000b7000000
@@ -1661,6 +1661,7 @@ MonoBehaviour:
   - ElecGame
   - PlumbingGame
   playlistStr: 060000000500000007000000
+  starsOnLevel: 
   playlistOrder: 3
 --- !u!114 &1902611896
 MonoBehaviour:
@@ -1675,327 +1676,392 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevel: 1
+  perfectFloors: 0
   tiles:
   - coordinates: {x: 3, y: 3}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 2}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 1}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 2}
     tiled: 1
     tileName: tileJuul2g
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 2}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 2}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 3}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 1}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 5}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 1}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 5}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 3}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 2}
     tiled: 1
     tileName: Fill
     noded: 1
     nodeName: nodePlumbing
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 3}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 3}
     tiled: 1
     tileName: Fill
     noded: 1
     nodeName: nodeElectricity
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 4}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 0}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 4}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 2, y: 3}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 2}
     tiled: 1
     tileName: tileCross
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 3}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 6, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 0, y: 2}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 4, y: 7}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 1, y: 2}
     tiled: 1
     tileName: Fill
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 7, y: 3}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 5, y: 6}
     tiled: 0
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
   - coordinates: {x: 3, y: 4}
     tiled: 1
     tileName: tileS2
     noded: 1
     nodeName: nodeVents
+    nodeInfluenced: 0
   nestedList:
   - tile:
     - coordinates: {x: 2, y: 2}
@@ -2003,16 +2069,20 @@ MonoBehaviour:
       tileName: tileJuul2g
       noded: 0
       nodeName: 
+      nodeInfluenced: 0
     - coordinates: {x: 4, y: 2}
       tiled: 1
       tileName: tileCross
       noded: 0
       nodeName: 
+      nodeInfluenced: 0
     - coordinates: {x: 3, y: 4}
       tiled: 1
       tileName: tileS2
       noded: 1
       nodeName: nodeVents
+      nodeInfluenced: 0
+    perfect: 1
 --- !u!4 &1902611897
 Transform:
   m_ObjectHideFlags: 0
@@ -2122,8 +2192,8 @@ RectTransform:
   m_Children:
   - {fileID: 447472982}
   - {fileID: 1787217873}
-  - {fileID: 1394848644}
   - {fileID: 477555381}
+  - {fileID: 1394848644}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

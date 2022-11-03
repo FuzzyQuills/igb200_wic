@@ -8,11 +8,17 @@ public class SummmaryScript : MonoBehaviour
     public TMP_Text textbox;
     GameData gD;
     TileInfoCollector tic;
+    GameObject nextSceneButton;
 
     private void Start()
     {
         gD = GameObject.Find("CodeMan").GetComponent<GameData>();
         tic = GameObject.Find("CodeMan").GetComponent<TileInfoCollector>();
+        nextSceneButton = GameObject.Find("ButtonNextPhase");
+        if (gD.money <= 0)
+        {
+            nextSceneButton.SetActive(false);
+        }
         StartCoroutine(displayGainz());
     }
 
