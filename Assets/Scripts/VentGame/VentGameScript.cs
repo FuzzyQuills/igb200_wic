@@ -143,8 +143,9 @@ public class VentGameScript : MonoBehaviour
                 i++;
             }
         }
-        winText.text = $"{i / 2} / {(ventNodes.Count / 2) / 2}";
+        winText.text = $"{i / 2} / {Mathf.Ceil((float)ventNodes.Count / 2 / 2)}";
         // Win condition
+        Debug.Log(Mathf.Ceil((float)ventNodes.Count / 2 / 2));
         if (i >= ventNodes.Count / 2)
         {
             int moolah = GameData.Reward(stars);

@@ -2761,7 +2761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeName: nodeVents
-  nodesMax: 1
+  nodesMax: 0
   nodesPlaced: 0
   countText: {fileID: 1139001100}
   nodeEnable: 1
@@ -3951,7 +3951,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeName: nodeElectricity
-  nodesMax: 1
+  nodesMax: 0
   nodesPlaced: 0
   countText: {fileID: 1713820624}
   nodeEnable: 1
@@ -9523,7 +9523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nodeName: nodePlumbing
-  nodesMax: 1
+  nodesMax: 0
   nodesPlaced: 0
   countText: {fileID: 965975958}
   nodeEnable: 1

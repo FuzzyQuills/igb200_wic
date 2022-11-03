@@ -17,15 +17,7 @@ public class NodeHolderScript : MonoBehaviour, IHolder
     {
         nodesPlaced--;
         nodeEnable = true;
-    }
-
-    void Start()
-    {
-        if (nodesMax == 0)
-        {
-            nodeEnable = false;
-        }
-    }
+    }    
 
     private void OnMouseDown()
     {
@@ -47,6 +39,22 @@ public class NodeHolderScript : MonoBehaviour, IHolder
     
     void Update()
     {
+        if (nodesMax > 0)
+        {
+            if (nodesPlaced != nodesMax)
+            {
+                nodeEnable = true;
+            }
+            else
+            {
+                nodeEnable = false;
+            }            
+        }
+        else
+        {
+            nodeEnable = false;            
+        }
+
         if (nodesMax == nodesPlaced)
         {
             countText.text = "Good Work";
