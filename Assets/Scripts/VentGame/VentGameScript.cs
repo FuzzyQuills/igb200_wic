@@ -17,7 +17,7 @@ public class VentGameScript : MonoBehaviour
 
     public GameObject ventNodeObject;
     public Color[] thingyBColors;
-    
+
     public List<VentHeadScript> ventNodes = new List<VentHeadScript>();
 
     // Win Screen Stuff
@@ -45,7 +45,7 @@ public class VentGameScript : MonoBehaviour
             {
                 numberOfVents = 8;
             }
-            
+
             // Reduce time based on the current level
             if (maxTime - (tic.currentLevel * 0.5f) > 3)
             {
@@ -61,7 +61,7 @@ public class VentGameScript : MonoBehaviour
 
         }
 
-        
+
 
 
         // Spawn coordinates
@@ -72,9 +72,9 @@ public class VentGameScript : MonoBehaviour
                 //GameObject g = Instantiate(thingyA, new Vector3(i-gridSize / 2,-j + gridSize / 2,0), Quaternion.identity);
                 GameObject g = Instantiate(ventPosition, gameHolder.transform.position, Quaternion.identity);
                 g.transform.parent = gameHolder.transform;
-                g.transform.position = new Vector3((float)i - gridSize / 2,(float)-j + gridSize / 2, 0) * scale;
+                g.transform.position = new Vector3((float)i - gridSize / 2, (float)-j + gridSize / 2, 0) * scale;
                 g.transform.localScale = g.transform.localScale * scale;
-                g.GetComponent<VentObject>().coord = new Vector2(i,j);
+                g.GetComponent<VentObject>().coord = new Vector2(i, j);
                 positions.Add(g.GetComponent<VentObject>());
             }
         }
@@ -112,7 +112,7 @@ public class VentGameScript : MonoBehaviour
     private void Update()
     {
         if (!stopTheGame)
-        {            
+        {
             timerSlider.value = currentTime;
             if (currentTime <= 0)
             {
@@ -130,7 +130,7 @@ public class VentGameScript : MonoBehaviour
 
 
             CheckForWin();
-        }        
+        }
     }
 
     public void CheckForWin()
@@ -143,6 +143,7 @@ public class VentGameScript : MonoBehaviour
                 i++;
             }
         }
+        winText.text = $"{i / 2} / {(ventNodes.Count / 2) / 2}";
         // Win condition
         if (i >= ventNodes.Count / 2)
         {
@@ -155,10 +156,11 @@ public class VentGameScript : MonoBehaviour
             if (gd)
             {
                 gd.expenditure += moolah;
+                gd.starsOnLevel[gd.playlistOrder - 1] = stars;
             }
             // Stop recursion
             stopTheGame = true;
-        }        
+        }
     }
 
     /// <summary>

@@ -10,15 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ddf7a31659015c4ab1d97c4d1dd1aed, type: 3}
-  m_Name: TutorialB2
+  m_Name: TutorialB4 1
   m_EditorClassIdentifier: 
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
   speakerIcon: {fileID: 21300000, guid: e86b64704dda5004aa5f42a68a8adfd9, type: 3}
-  secondaryIcon: {fileID: 0}
+  secondaryIcon: {fileID: 21300000, guid: f47b624275ff28942ad339f5eed08e24, type: 3}
   dialogue:
-  - 'Hey!! You people cant be walking around here without a safety hat! '
-  - 'OH is that you Sarah? '
-  - 'That means you must be the new hire, the names Stephanie im head of construction
-    on this build site. '
+  - First off i'll explain plumbing real quick.
+  - The objective of this job is to get the pipe system working as intended. This
+    means getting the pipes alligned from point A to B.

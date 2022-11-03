@@ -16,7 +16,7 @@ public class VentHeadScript : MonoBehaviour
         {
             father = value;
         }
-        
+
     }
 
     public bool connected = false;
@@ -64,7 +64,7 @@ public class VentHeadScript : MonoBehaviour
     }
 
     IEnumerator Drag()
-    {        
+    {
         Debug.Log("Drag Beginning");
         CleanPaint();
         Vector2 currentPos = father.coord;
@@ -76,7 +76,7 @@ public class VentHeadScript : MonoBehaviour
         {
             lineCount++;
             lr.positionCount = lineCount + 1;
-            lr.SetPosition(lineCount, new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y, transform.position.z));            
+            lr.SetPosition(lineCount, new Vector3(hit.collider.transform.position.x, hit.collider.transform.position.y, transform.position.z));
         }
 
         while (Input.touchCount > 0)
@@ -96,7 +96,7 @@ public class VentHeadScript : MonoBehaviour
                         currentPos = hit.collider.GetComponent<VentObject>().coord;
                         hit.collider.GetComponent<VentObject>().painted = true;
                         hit.collider.GetComponent<VentObject>().paintID = identity;
-                    }                    
+                    }
                 }
                 if (hit.collider.tag == "VentHead" && hit.collider.transform != this.transform)
                 {
@@ -110,7 +110,7 @@ public class VentHeadScript : MonoBehaviour
                             Debug.Log("End Detected. Disconnecting");
                             break;
                         }
-                    }                                 
+                    }
                 }
             }
 
@@ -118,11 +118,11 @@ public class VentHeadScript : MonoBehaviour
         }
 
         if (!connected)
-        {            
+        {
             CleanPaint();
             Debug.Log("Connection failed");
         }
-        
+
         yield return null;
     }
 }

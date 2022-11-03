@@ -23,5 +23,5 @@ MonoBehaviour:
   - Building on top of a previous foundation is much cheaper than building overhangs.
   - The exception to this is a golden tile. They can be placed outside the shaded
     area for cheap.
-  - Keep all of your tiles (exclusing the gold onces) inside the shaded area to score
+  - Keep all of your tiles (excluding the gold ones) inside the shaded area to score
     a perfect floor!

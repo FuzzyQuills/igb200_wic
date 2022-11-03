@@ -35,12 +35,12 @@ public class PlumbingGame : MonoBehaviour
 
         if (gd)
         {
-            gd.expenditure = 0;            
+            gd.expenditure = 0;
         }
         if (tIC)
-        {            
-            maxTime = maxTime - tIC.currentLevel;            
-        }       
+        {
+            maxTime = maxTime - tIC.currentLevel;
+        }
 
         //// Script for scaling the game's pipes and size
 
@@ -56,17 +56,17 @@ public class PlumbingGame : MonoBehaviour
         {
             for (int j = 0; j < gridY; j++)
             {
-                int r = Random.Range(0,generates.Length);
+                int r = Random.Range(0, generates.Length);
                 GameObject g = Instantiate(generates[r], transform);
-                g.transform.position = new Vector3((i+0.5f - (gridX / 2)) + transform.position.x, -(j+0.5f - (gridY / 2)) + transform.position.y, 0) / scale;
+                g.transform.position = new Vector3((i + 0.5f - (gridX / 2)) + transform.position.x, -(j + 0.5f - (gridY / 2)) + transform.position.y, 0) / scale;
                 g.transform.localScale = Vector3.one * 0.95f / scale;
 
-                
-                pipes.Add(new PipeData(g, new Vector2(i,j)));
+
+                pipes.Add(new PipeData(g, new Vector2(i, j)));
             }
         }
 
-        
+
         for (int i = 0; i < pipes.Count; i++)
         {
             pipes[i].pipeScript.thisPD = pipes[i];
@@ -74,10 +74,10 @@ public class PlumbingGame : MonoBehaviour
 
 
         GameObject start = Instantiate(Resources.Load("Pipes/PipeStart") as GameObject, transform);
-        start.transform.position = new Vector3((0.5f - (gridX/2)) + transform.position.x, (gridY+0.5f - (gridY/2)) + transform.position.y, 0) / scale;
+        start.transform.position = new Vector3((0.5f - (gridX / 2)) + transform.position.x, (gridY + 0.5f - (gridY / 2)) + transform.position.y, 0) / scale;
         start.transform.localScale = Vector3.one * 0.95f / scale;
-        GameObject end =  Instantiate(Resources.Load("Pipes/PipeEnd") as GameObject, transform);
-        end.transform.position = new Vector3((gridX-0.5f - (gridX/2)) + transform.position.x, (-0.5f - (gridY/2)) + transform.position.y, 0) / scale;
+        GameObject end = Instantiate(Resources.Load("Pipes/PipeEnd") as GameObject, transform);
+        end.transform.position = new Vector3((gridX - 0.5f - (gridX / 2)) + transform.position.x, (-0.5f - (gridY / 2)) + transform.position.y, 0) / scale;
         end.transform.localScale = Vector3.one * 0.95f / scale;
 
         for (int i = 0; i < pipes.Count; i++)
@@ -119,7 +119,7 @@ public class PlumbingGame : MonoBehaviour
                 starText.text = $"{stars} stars";
                 currentTime = maxTime;
             }
-        }        
+        }
     }
 
 
@@ -137,18 +137,18 @@ public class PlumbingGame : MonoBehaviour
         foreach (PipeData p in pipes)
         {
             if (p.pos == Vector2.zero)
-            {                
+            {
                 if (p.pipe.GetComponent<PipeScript>().directions[0] == true)
                 {
                     p.pipe.GetComponent<PipeScript>().UpdateState(1);
                     // Do recursive?
                     Infect(p);
-                }             
+                }
             }
 
             // Win Condition
             if (p.pos == new Vector2(gridX - 1, gridY - 1))
-            {                
+            {
                 if (p.pipeScript.mysteryCube == null && p.pipeScript.state == 1 && p.pipeScript.directions[2] == true)
                 {
                     int reward = GameData.Reward(stars);
@@ -162,6 +162,7 @@ public class PlumbingGame : MonoBehaviour
                     if (gd)
                     {
                         gd.expenditure += reward;
+                        gd.starsOnLevel[gd.playlistOrder - 1] = stars;
                     }
                     // Disable interactions with pipes, make connecting pipes blue
                     foreach (PipeData pp in pipes)
@@ -169,12 +170,12 @@ public class PlumbingGame : MonoBehaviour
                         pp.pipeScript.interactive = false;
                         if (pp.pipeScript.state == 1)
                         {
-                            pp.pipeScript.UpdateState(2);                            
+                            pp.pipeScript.UpdateState(2);
                         }
                     }
                     break;
                 }
-                
+
             }
         }
     }
@@ -224,7 +225,7 @@ public class PlumbingGame : MonoBehaviour
                 Infect(pD.neighbours[3].thisPD);
             }
         }
-    }    
+    }
 
     /// <summary>
     /// For getting the surrounding pipes of a given pipe
@@ -255,11 +256,6 @@ public class PlumbingGame : MonoBehaviour
                 p.neighbours[3] = pipe.pipeScript;
             }
         }
-    }
-
-    void Win()
-    {
-
     }
 }
 

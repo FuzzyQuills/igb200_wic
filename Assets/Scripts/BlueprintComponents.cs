@@ -10,7 +10,7 @@ using UnityEngine.SceneManagement;
 /// </summary>
 public class BlueprintComponents : MonoBehaviour
 {
-    bool tilesOrNodes = false; // 0=tiles, 1=nodes
+    bool tilesOrNodes = true; // 0=tiles, 1=nodes
     public GameObject[] holders; // Holds the TileHolder and NodeHolder interfaces for enabling/disabling
 
     public TMP_Text throwaway; // for alpha Emily's text bubble.
@@ -35,6 +35,30 @@ public class BlueprintComponents : MonoBehaviour
         gd.kink = true;
         gd.playlistOrder = 0;
         gd.moneyChanges = new List<int>();
+
+        // Randomize nodes
+        {
+            int[] a = new int[3];
+            int b = 0;
+            // The game must always have a number of nodes between 1 and 5
+            while (b <= 1 || b >= 5)
+            {
+                b = 0;
+                for (int i = 0; i < a.Length; i++)
+                {
+                    a[i] = Random.Range(0,3);
+                    b += a[i];
+                }
+            }
+            NodeHolderScript[] nhs = GameObject.FindObjectsOfType<NodeHolderScript>();
+            Debug.Log(nhs.Length + "a");
+            for (int i = 0; i < a.Length; i++)
+            {
+                nhs[i].nodesMax = a[i];
+            }
+            // Hide nodeholder on active
+            SwitchInterface();
+        }
     }
 
     private void Update()
@@ -45,9 +69,9 @@ public class BlueprintComponents : MonoBehaviour
         {
             count += nodes[i].GetComponent<Draggable>().nodeStrength;
         }
-        nodeText.text = $"Potential Reward:<br>${GameData.Reward(5,count)}k";
+        nodeText.text = $"Potential Reward:<br>${GameData.Reward(5, count)}k";
 
-        
+
 
     }
 
@@ -62,13 +86,13 @@ public class BlueprintComponents : MonoBehaviour
         if (tilesOrNodes)
         {
             holders[0].SetActive(false);
-            holders[1].SetActive(true);            
+            holders[1].SetActive(true);
         }
         else
         {
             holders[1].SetActive(false);
             holders[0].SetActive(true);
-        }        
+        }
     }
 
     /// <summary>
@@ -88,7 +112,7 @@ public class BlueprintComponents : MonoBehaviour
                 return;
             }
         }
-        
+
         // Record positions of the tiles
         GameObject.FindObjectOfType<TileInfoCollector>().SaveTiles();
         GameObject.FindObjectOfType<GameData>().SaveMoney();
@@ -117,11 +141,11 @@ public class BlueprintComponents : MonoBehaviour
                     {
                         //Debug.Log($"Tile '{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}' placed at {b.tileInfo.coordinates}");
                         GameObject g = Instantiate(Resources.Load($"Draggables/{tIC.nestedList[tIC.currentLevel - 1].tile[i].tileName}") as GameObject, b.transform.position, Quaternion.identity);
-                        EnshadowTiles(b,g.GetComponent<Draggable>());
-                        
+                        EnshadowTiles(b, g.GetComponent<Draggable>());
+
                         g.layer = (int)LayerMask.NameToLayer("Ignore Raycast");
                         g.tag = "Untagged";
-                        g.GetComponent<Renderer>().material.color = new Color(0,0,0,0.8f);  //new Color32(55, 232, 132, 100);
+                        g.GetComponent<Renderer>().material.color = new Color(0, 0, 0, 0.8f);  //new Color32(55, 232, 132, 100);
                         g.GetComponent<Renderer>().sortingOrder = 0;
                         Destroy(g.GetComponent<Collider2D>());
                         Destroy(g.GetComponent<Draggable>());
@@ -149,7 +173,7 @@ public class BlueprintComponents : MonoBehaviour
                     b.shadowed = true;
                 }
             }
-        }        
+        }
     }
 
 
@@ -164,12 +188,16 @@ public class BlueprintComponents : MonoBehaviour
         foreach (GameObject g in nodes)
         {
             Draggable d = g.GetComponent<Draggable>();
+            if (d.nodeStrength == 0) // A pity buff. Stops a floor granting a reward of 0
+            {
+                d.nodeStrength = 1;
+            }
             playlistStr.Add(d.nodeStrength);
 
             switch (d.standingTile.nodeName)
             {
                 case "nodeVents":
-                    playlist.Add("VentGame");                    
+                    playlist.Add("VentGame");
                     break;
                 case "nodePlumbing":
                     playlist.Add("PlumbingGame");
@@ -187,9 +215,9 @@ public class BlueprintComponents : MonoBehaviour
         {
             string temp = playlist[i];
             int tempStr = playlistStr[i];
-            
+
             int randomIndex = Random.Range(i, playlist.Count);
-            
+
             playlist[i] = playlist[randomIndex];
             playlistStr[i] = playlistStr[randomIndex];
             playlist[randomIndex] = temp;
@@ -199,6 +227,7 @@ public class BlueprintComponents : MonoBehaviour
         // Give list to the codeman as an array
         GameObject.FindObjectOfType<GameData>().playlist = playlist.ToArray();
         GameObject.FindObjectOfType<GameData>().playlistStr = playlistStr.ToArray();
+        GameObject.FindObjectOfType<GameData>().starsOnLevel = new int[playlist.Count];
 
     }
 

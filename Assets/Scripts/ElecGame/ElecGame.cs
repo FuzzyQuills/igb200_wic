@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class ElecNodeLayer {
+public class ElecNodeLayer
+{
     public List<ElecNode> nodes;
 }
 
@@ -45,9 +46,11 @@ public class ElecGame : MonoBehaviour
     public TMP_Text currentVoltageText;
     public TMP_Text winText;
 
-    float ComputeLayerVoltage (ElecNodeLayer layer) {
+    float ComputeLayerVoltage(ElecNodeLayer layer)
+    {
         float accumulatedNodeVoltages = 0.0f;
-        foreach (ElecNode node in layer.nodes) {
+        foreach (ElecNode node in layer.nodes)
+        {
             accumulatedNodeVoltages += node.breaker.IsOn ? node.voltageDiff : 0.0f;
         }
         float result = accumulatedNodeVoltages;
@@ -59,25 +62,30 @@ public class ElecGame : MonoBehaviour
     {
         c_gd = GameObject.Find("CodeMan").GetComponent<GameData>();
         c_tileInfoCollector = GameObject.Find("CodeMan").GetComponent<TileInfoCollector>();
-        if (c_gd) {
+        if (c_gd)
+        {
             c_gd.expenditure = 0;
         }
-        if (c_tileInfoCollector) {
+        if (c_tileInfoCollector)
+        {
             playTime -= c_tileInfoCollector.currentLevel;
         }
 
-        desiredVoltage = Random.Range(6.0f, 20.0f);        
+        desiredVoltage = Random.Range(6.0f, 20.0f);
         startingVoltage = Random.Range(0, desiredVoltage / 3);
         startingVoltageLabel.text = string.Format("Starting Voltage: {0:0.00}", startingVoltage);
 
         // Compute voltage stride from desired voltage.
-        float voltageStride = desiredVoltage / 6;
+        float voltageStride = desiredVoltage / startingVoltage;
 
         // Generate voltage tolerance value.
         float vTdiff = voltageTolerance / (c_tileInfoCollector.currentLevel * 0.5f);
-        if (c_tileInfoCollector.currentLevel > 0) {
+        if (c_tileInfoCollector.currentLevel > 0)
+        {
             voltageTolerance = vTdiff; // TODO: change to difficulty based values later. 
-        } else {
+        }
+        else
+        {
             voltageTolerance = vTdiff / c_tileInfoCollector.currentLevel; // TODO: change to difficulty based values later. 
         }
 
@@ -88,14 +96,16 @@ public class ElecGame : MonoBehaviour
 
         // Generate grid. 
         layers = new List<ElecNodeLayer>(numberOfLayers);
-        for (int y = 1; y <= numberOfLayers; ++y) {
+        for (int y = 1; y <= numberOfLayers; ++y)
+        {
             ElecNodeLayer newLayer = new ElecNodeLayer();
             newLayer.nodes = new List<ElecNode>(numberOfNodesPerLayer);
-            for (int x = 1; x <= numberOfNodesPerLayer; ++x) {
+            for (int x = 1; x <= numberOfNodesPerLayer; ++x)
+            {
                 Vector3 newPosition = new Vector3((xstride * x) - (playAreaDimensions.x / 2), (ystride * y) - (playAreaDimensions.y / 2), 0);
                 GameObject temp = Instantiate<GameObject>(ElecNodePrefab, newPosition, ElecNodePrefab.transform.rotation);
                 temp.transform.SetParent(RootTransform.transform, false);
-                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(1, voltageStride));
+                temp.GetComponent<ElecNode>().voltageDiff = Mathf.Round(Random.Range(0, voltageStride));
                 voltageUpOrDown = !voltageUpOrDown;
                 newLayer.nodes.Add(temp.GetComponent<ElecNode>());
             }
@@ -108,7 +118,8 @@ public class ElecGame : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!gameWon) {
+        if (!gameWon)
+        {
             currentTime -= Time.deltaTime;
             timeSlider.value = currentTime / playTime;
             //Debug.Log(string.Format("{0}", currentTime / playTime));
@@ -122,7 +133,8 @@ public class ElecGame : MonoBehaviour
         }
         // Sum all layers, based on ElecNode states in each layer.
         float accumulatedVoltage = 0.0f;
-        foreach (ElecNodeLayer layer in layers) {
+        foreach (ElecNodeLayer layer in layers)
+        {
             float layerVoltage = ComputeLayerVoltage(layer);
 
             //if (layerVoltage != 0.0f) {
@@ -135,8 +147,9 @@ public class ElecGame : MonoBehaviour
             accumulatedVoltage += layerVoltage;
         }
         currentVoltageText.text = $"Currently:<br>{(int)startingVoltage + accumulatedVoltage}V";
-        
-        if (finalSwitch.IsOn) {
+
+        if (finalSwitch.IsOn)
+        {
             finalVoltage = (accumulatedVoltage > 0.0f ? startingVoltage + accumulatedVoltage : 0.0f);
 
 
@@ -149,7 +162,8 @@ public class ElecGame : MonoBehaviour
             //}
 
             // test for win condition.
-            if (finalVoltage >= (desiredVoltage - voltageTolerance) && finalVoltage <= (desiredVoltage + voltageTolerance)) {
+            if (finalVoltage > (desiredVoltage - voltageTolerance) && finalVoltage < (desiredVoltage + voltageTolerance))
+            {
                 Debug.Log($"({desiredVoltage - voltageTolerance}) {finalVoltage} ({desiredVoltage + voltageTolerance})");
                 gameWon = true;
                 float voltageReward = 1.0f / (desiredVoltage - finalVoltage);
@@ -161,23 +175,28 @@ public class ElecGame : MonoBehaviour
                 //finalVoltageLabel.text = string.Format("SUCCESS!\nFinal Voltage: {0:0.00}V\n{1}K awarded!", finalVoltage, prizeMoney);
                 winText.text = $"{stars} Stars!<br><color=green>{prizeMoney}k awarded!";
                 finalSwitch.disableBreaker = true;
-                if (c_gd && !moneyRewarded) {
+                if (c_gd && !moneyRewarded)
+                {
                     c_gd.expenditure += prizeMoney;
+                    c_gd.starsOnLevel[c_gd.playlistOrder - 1] = stars;
                     moneyRewarded = true;
                 }
-                foreach (ElecNodeLayer layer in layers) {
-                    foreach (ElecNode node in layer.nodes) {
+                foreach (ElecNodeLayer layer in layers)
+                {
+                    foreach (ElecNode node in layer.nodes)
+                    {
                         node.breaker.disableBreaker = true;
                     }
                 }
                 requiredVoltageText.text = "VOLTAGE:<color=green><br>PERFECT!";
+
             }
             else
             {
                 finalSwitch.IsOn = false;
                 StartCoroutine(GameError(finalVoltage));
             }
-        } 
+        }
     }
 
     IEnumerator GameError(float finalVoltage)
@@ -198,7 +217,8 @@ public class ElecGame : MonoBehaviour
         yield return null;
     }
 
-    void OnDrawGizmos () {
+    void OnDrawGizmos()
+    {
         Gizmos.DrawWireCube(RootTransform.transform.position, new Vector3(playAreaDimensions.x * transform.localScale.x, playAreaDimensions.y * transform.localScale.y, 0.001f));
     }
 }

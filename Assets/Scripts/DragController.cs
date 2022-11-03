@@ -39,7 +39,7 @@ public class DragController : MonoBehaviour
         else
         {
             // Bail early; nothing to do.
-            return; 
+            return;
         }
 
         // Update tile dragging parameters. 
@@ -49,7 +49,7 @@ public class DragController : MonoBehaviour
             Drag();
         }
         else
-        {            
+        {
             RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
             //Debug.Log(hit.collider.gameObject.name);
             if (hit.collider != null)
@@ -71,12 +71,13 @@ public class DragController : MonoBehaviour
         lastDragged.lastPosition = lastDragged.transform.position;
         lastDragged.EmptyTile();
         UpdateDragStatus(true);
+
     }
 
     // Updates a dragged tile. 
     void Drag()
     {
-        lastDragged.transform.position = new Vector2(worldPosition.x,worldPosition.y);
+        lastDragged.transform.position = new Vector2(worldPosition.x, worldPosition.y);
     }
 
     // Drops a tile when all input events are released. 

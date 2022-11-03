@@ -10,8 +10,8 @@ public class PipeScript : MonoBehaviour
 
     public bool rotateEnabled = true;
 
-    Color connected = Color.green, 
-          disconnected = Color.Lerp(Color.yellow, Color.red, 0.5f), 
+    Color connected = Color.green,
+          disconnected = Color.Lerp(Color.yellow, Color.red, 0.5f),
           full = new Color32(0, 220, 220, 255); // Tea;
 
     public Renderer stateRenderer;
@@ -27,7 +27,7 @@ public class PipeScript : MonoBehaviour
     private void Start()
     {
         UpdateState(state);
-        int r = Random.Range(0,3);
+        int r = Random.Range(0, 3);
         for (int i = 0; i < r; i++)
         {
             ChangeDirection(false);
@@ -57,7 +57,7 @@ public class PipeScript : MonoBehaviour
 
     // Rotate when touched
     private void OnMouseDown()
-    {        
+    {
         if (interactive)
         {
             if (mysteryCube != null)
@@ -66,7 +66,7 @@ public class PipeScript : MonoBehaviour
                 //GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
             }
             ChangeDirection(true);
-        }        
+        }
     }
 
     void ChangeDirection(bool Bool)
@@ -78,8 +78,8 @@ public class PipeScript : MonoBehaviour
             if (Bool)
             {
                 GameObject.FindObjectOfType<PlumbingGame>().UpdateStuff();
-            }            
-        }        
+            }
+        }
     }
 
 

@@ -18,5 +18,5 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: e3421043335128945ae80d2a584bdf4f, type: 3}
   secondaryIcon: {fileID: 21300000, guid: bbbd38630713947459a68e560d449224, type: 3}
   dialogue:
-  - Don't worry about it i was just finishing up one of my desings.
-  - 'Oh sorry i forgot to introduce myself, Im Emily head of the Architecture deparment. '
+  - Don't worry about it I was just finishing up one of my desings.
+  - 'Oh sorry i forgot to introduce myself. Im Emily, head of the Architecture deparment. '

@@ -412,8 +412,8 @@ MonoBehaviour:
     background: {fileID: 21300000, guid: c8142b883142e504a91babf29d0b31b5, type: 3}
   - dialogues:
     - {fileID: 11400000, guid: 51c6c615078fb00479f6ef07132de7c2, type: 2}
-    - {fileID: 11400000, guid: 3dcd500eb4def5042b6a99e46a223365, type: 2}
     - {fileID: 11400000, guid: 84be6579f3771eb4d846d362ffed3b83, type: 2}
+    - {fileID: 11400000, guid: 3dcd500eb4def5042b6a99e46a223365, type: 2}
     - {fileID: 11400000, guid: 317fe978e33545641bf6481ff542e74f, type: 2}
     - {fileID: 11400000, guid: b8d3ee3461ea4f145b60775431a91e13, type: 2}
     - {fileID: 11400000, guid: fb200ff11ce166949b7fe460830220d3, type: 2}
@@ -1198,6 +1198,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1537180516}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 276869351}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: SkipForward
@@ -1332,6 +1344,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1537180516}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 276869351}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: SkipForward
@@ -1535,6 +1559,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1537180516}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 276869351}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: SkipForward
@@ -2087,6 +2123,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1537180516}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 276869351}
         m_TargetAssemblyTypeName: TutorialScript, Assembly-CSharp
         m_MethodName: SkipForward
