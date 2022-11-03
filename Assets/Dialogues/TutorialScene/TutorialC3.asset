@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: TutorialC3
   m_EditorClassIdentifier: 
   dialogueSpeed: 0.25
-  speakerName: Emma
-  speakerNameColor: {r: 1, g: 0.013207495, b: 0.28803116, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
+  speakerName: Sarah
+  speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
+  speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - 
+  - Of course!

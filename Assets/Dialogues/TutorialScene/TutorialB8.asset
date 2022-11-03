@@ -16,9 +16,7 @@ MonoBehaviour:
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
-  secondaryIcon: {fileID: 0}
+  secondaryIcon: {fileID: 21300082, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   dialogue:
-  - You've done well for your first time on the job. (this is for the interactive
-    tutorial, coming soon!)
-  - "I'm glad to be working with you, you\u2019ll be more helpful than most of the
-    guys I work with, it was nice meeting you."
+  - If you need any help, dont be afraid to contact me with the help button.
+  - I'm looking forward to working with you, it was nice meeting you.

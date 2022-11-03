@@ -16,8 +16,8 @@ MonoBehaviour:
   speakerName: Emily
   speakerNameColor: {r: 0.4764151, g: 1, b: 0.9893081, a: 1}
   speakerIcon: {fileID: 21300000, guid: e3421043335128945ae80d2a584bdf4f, type: 3}
-  secondaryIcon: {fileID: 0}
+  secondaryIcon: {fileID: 21300082, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   dialogue:
-  - and thats how we design our bluebrints. If you need any help, im always around
-    to assist you.
-  - I look forward to working with you!
+  - and thats how we design our bluebrints. If you need any assistance in the future,
+    press the help button and i'll come to help.
+  - I'll be looking forward to working with you!

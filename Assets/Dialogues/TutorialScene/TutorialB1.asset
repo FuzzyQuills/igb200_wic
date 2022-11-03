@@ -18,7 +18,8 @@ MonoBehaviour:
   speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
-  - Thanks for that Emily, we'll be going now, cya.
-  - Since Emily did all the talking for me we will just move onto the next phase
+  - Thanks for that Emily, we'll be moving onto the next phase of floor development
+    now. See ya!
+  - Since Emily did all the talking for me, we will just move onto the next phase
     of work, the construction.
   - As you see here construction starts an--

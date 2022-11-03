@@ -20,9 +20,8 @@ MonoBehaviour:
   dialogue:
   - When you begin work on the next floor, you will see a shadow that outlines your
     previous floor.
-  - Building on top of a previous foundation is much cheaper than creating overhanging
-    areas.
-  - The exception to this is those golden tiles from earlier. They are designed in
-    a way that makes them cheaper to place this way.
-  - If you do manage to keep your floor in the bounds of the previous floor, then
-    that's pretty cool! We call these 'perfect floors'.
+  - Building on top of a previous foundation is much cheaper than building overhangs.
+  - The exception to this is a golden tile. They can be placed outside the shaded
+    area for cheap.
+  - Keep all of your tiles (exclusing the gold onces) inside the shaded area to score
+    a perfect floor!
