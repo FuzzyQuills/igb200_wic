@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
-  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
+  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 44463774843c93a4c8cf7f564d450c08, type: 3}
   dialogue:
   - 'Another expertise you will help in is setting up the ventilation system. '

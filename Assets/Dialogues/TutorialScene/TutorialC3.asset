@@ -10,18 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2ddf7a31659015c4ab1d97c4d1dd1aed, type: 3}
-  m_Name: TutorialB2.5
+  m_Name: TutorialC3
   m_EditorClassIdentifier: 
   dialogueSpeed: 0.25
   speakerName: Sarah
   speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
-<<<<<<< Updated upstream
-  speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
-=======
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
->>>>>>> Stashed changes
   secondaryIcon: {fileID: 0}
   dialogue:
-  - 'Hey Stephanie, what great timing, sorry about the hard hat thing, im just not
-    usually on the site that often. '
-  - 'buuuutt since your here, could you show the new hire around the site? '
+  - Of course!

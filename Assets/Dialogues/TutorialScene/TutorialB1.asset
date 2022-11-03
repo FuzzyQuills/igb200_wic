@@ -15,7 +15,11 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Sarah
   speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
+<<<<<<< Updated upstream
   speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
+=======
+  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
+>>>>>>> Stashed changes
   secondaryIcon: {fileID: 0}
   dialogue:
   - Thanks for that Emily, we'll be going now, cya.

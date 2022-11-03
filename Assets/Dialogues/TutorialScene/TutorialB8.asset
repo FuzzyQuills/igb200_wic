@@ -15,8 +15,13 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
+<<<<<<< Updated upstream
   speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
   secondaryIcon: {fileID: 0}
+=======
+  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
+  secondaryIcon: {fileID: 21300082, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
+>>>>>>> Stashed changes
   dialogue:
   - You've done well for your first time on the job. (this is for the interactive
     tutorial, coming soon!)
