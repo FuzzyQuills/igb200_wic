@@ -1,0 +1,23 @@
+"RUNWAY TOWER"
+a game by 'Team 6':
+Mika Ahfuni,
+Cameron Dougan,
+Coen Hooper,
+Jean-Luc Mackail.
+
+THIRD PARTY ASSETS
+-SPRITES
+	Bloomberg London office space.jpg, Wikipedia Commons
+	Construction site in Manuka, spelio, flickr.com
+	Yellow Hard Hat, OpenClipart, freesvg.org
+	Shrug, OpenClipart, freesvg.org
+	2D Casual UI HD, MiMU STUDIO, assetstore.unity.com
+-TEXTURES
+	Ground_Dirt_007, 3dtextures.me
+	Stylized_Grass_002, 3dtextures.me
+-FONTS
+	Impact Font, Geoffrey Lee, dafontfree.io
+-SOFTWARE
+	Unity, Game Engine
+	Krita, Sprite Design
+	Blender3D, 3D modelling
