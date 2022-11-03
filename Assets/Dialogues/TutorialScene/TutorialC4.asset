@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Emma
   speakerNameColor: {r: 1, g: 0.013207495, b: 0.28803116, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
+  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - Right well I wont take much of your time. I just want to go over the most important

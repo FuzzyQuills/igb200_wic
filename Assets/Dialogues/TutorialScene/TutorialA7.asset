@@ -23,4 +23,3 @@ MonoBehaviour:
     tilesets.
   - Each tile costs money to place. Generally the larger the tile, the more it will
     cost.
-  - See those yellow bits? They are called 'overhangs'. Ill get to those later.

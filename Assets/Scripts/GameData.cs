@@ -26,6 +26,7 @@ public class GameData : MonoBehaviour
 
     public string[] playlist;
     public int[] playlistStr; // The amount of reward given upon game completion (based on node position)
+    public int[] starsOnLevel; // For calculating if you get five stars
     public int playlistOrder = 0;
 
     private void Awake()
@@ -38,7 +39,7 @@ public class GameData : MonoBehaviour
             {
                 Destroy(moneyUI_Canvas);
             }
-            
+
             Destroy(gameObject);
         }
         else
@@ -55,14 +56,14 @@ public class GameData : MonoBehaviour
                 moneyUI_Canvas = g;
                 DontDestroyOnLoad(moneyUI_Canvas);
             }
-            
+
         }
         // Break down the Money UI elements into easily accessible variaables
         if (moneyUI_Canvas)
         {
             moneyUI_Text = moneyUI_Canvas.transform.GetComponentInChildren<TMP_Text>();
             moneyUI_Slider = moneyUI_Canvas.transform.GetComponentInChildren<Slider>();
-        }        
+        }
 
     }
 
@@ -70,13 +71,6 @@ public class GameData : MonoBehaviour
     private void Update()
     {
         UpdateMoneyUI();
-
-        // Game over if your money reaches zero. Typically happens after the SaveMoney is called
-        if (money < 0)
-        {
-            SceneManager.LoadScene("GameOver");
-            money = 0;
-        }
     }
 
     /// <summary>
@@ -97,7 +91,7 @@ public class GameData : MonoBehaviour
                     expenditure += dragsInScene[i].price;
                 }
             }
-        }       
+        }
 
 
         if (expenditure == 0) // Only shows the money if there's not expenditure
@@ -116,15 +110,15 @@ public class GameData : MonoBehaviour
             moneyUI_Text.text =
                 $"<size=40><color=green>${expenditure.ToString("n0")}k</size></color><br>" +
                 $"${(money + expenditure).ToString("n0")}k";
-        }        
-        
+        }
+
         // Make the slider equal to the money + expenditure change.
         moneyUI_Slider.value = money + expenditure;
 
     }
 
     public void SaveMoney()
-    {        
+    {
 
         // Add the expenditure of this scene to the MoneyChanges List
         moneyChanges.Add(expenditure);
@@ -145,7 +139,7 @@ public class GameData : MonoBehaviour
         {
             SceneManager.LoadScene(playlist[playlistOrder]);
             playlistOrder++;
-        }        
+        }
     }
 
     /// <summary>
@@ -161,13 +155,13 @@ public class GameData : MonoBehaviour
         {
             GameData gd = GameObject.Find("CodeMan").GetComponent<GameData>();
             strength = gd.playlistStr[gd.playlistOrder - 1];
-        }        
+        }
         // The reward granted by one single tilespace
         int baseScore = 18;
         // The maximum and minimum multipliers for stars
         float starMultMin = 0.5f;
-        float starMultMax = 1.7f;
-        
+        float starMultMax = 1.5f;
+
         return (int)((baseScore * strength) * (starMultMin + ((starMultMax - starMultMin) / 5) * stars));
     }
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
+  speakerIcon: {fileID: 21300000, guid: e86b64704dda5004aa5f42a68a8adfd9, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 01c91d1de732be84bacc42489aae3cbe, type: 3}
   dialogue:
   - Finally you will be setting up the wiring for every floor as well!

@@ -15,7 +15,7 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Sarah
   speakerNameColor: {r: 0.4745098, g: 1, b: 0.5568628, a: 1}
-  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
+  speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
   secondaryIcon: {fileID: 0}
   dialogue:
   - Of course!

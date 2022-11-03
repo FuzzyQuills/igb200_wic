@@ -53,7 +53,7 @@ public class NodeHolderScript : MonoBehaviour, IHolder
         }
         else
         {
-            countText.text = $"+{nodesMax - nodesPlaced} required";
+            countText.text = $"{nodesPlaced} / {nodesMax}";
         }
     }
 }

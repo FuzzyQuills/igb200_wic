@@ -15,15 +15,11 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Sarah
   speakerNameColor: {r: 0.47450984, g: 1, b: 0.55534875, a: 1}
-<<<<<<< Updated upstream
-  speakerIcon: {fileID: 21300000, guid: f42328db046a76a4885bad4e9c9baaf3, type: 3}
-=======
-  speakerIcon: {fileID: 21300000, guid: b7bce4f17e23bd84fa5ebbf208835595, type: 3}
->>>>>>> Stashed changes
+  speakerIcon: {fileID: 21300000, guid: 3d0002a623fa95343acf211e348d068d, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 0639892859b7d734b9cb32fa9f519d0d, type: 3}
   dialogue:
-  - 'First things off, this is where all our architectures do all the blueprint.
+  - 'First things off, you''re going to design the floor you work on.
 
 '
-  - During the start of construction, we have our architects create blueprints, and
-    then give them to the construction team to build our tower!
+  - At the start of construction, we have our architects create blueprints, which
+    are then given the construction team for work on our tower!

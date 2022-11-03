@@ -10,10 +10,12 @@ using UnityEngine;
 public class TileInfo
 {
     public Vector2 coordinates;
-    
+
     public bool tiled = false;
     public string tileName;
 
     public bool noded = false;
     public string nodeName;
+
+    public bool nodeInfluenced = false;
 }

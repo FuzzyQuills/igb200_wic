@@ -15,13 +15,10 @@ MonoBehaviour:
   dialogueSpeed: 0.25
   speakerName: Stephanie
   speakerNameColor: {r: 1, g: 0.79038846, b: 0.47450984, a: 1}
-  speakerIcon: {fileID: 21300000, guid: 90e082cd033c18a4fb86a800dfb8c44e, type: 3}
+  speakerIcon: {fileID: 21300000, guid: e86b64704dda5004aa5f42a68a8adfd9, type: 3}
   secondaryIcon: {fileID: 21300000, guid: 44463774843c93a4c8cf7f564d450c08, type: 3}
   dialogue:
   - 'Another expertise you will help in is setting up the ventilation system. '
-  - 'Here you will see a colour coded diagram, the same colours have to attach to
-    their corresponding colour. '
-  - But its not that simple! You have to make sure that the vents don't overlap with
-    each other.
-  - When you've attached every vent, you win!
-  - 'Same as the last game, if you get it done quick you get more funding. '
+  - Pretty simple. Create and connect a series of colored vents together from A to
+    B also.
+  - Same as the last game, if you get it done quick you get more funding.

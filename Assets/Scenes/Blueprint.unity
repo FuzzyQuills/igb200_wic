@@ -175,6 +175,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &13307949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -253,6 +254,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &16147100
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -886,6 +888,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &77925801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -964,6 +967,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &79389062
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1042,6 +1046,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &112240808
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1120,6 +1125,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &153720629
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1198,6 +1204,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &163575784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1276,6 +1283,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &173289186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1354,6 +1362,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &191761596
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1638,6 +1647,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &240724437
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1792,6 +1802,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &273992933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1834,7 +1845,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &288584961
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1896,7 +1907,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288584960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.26, y: 0, z: 0}
   m_LocalScale: {x: 3.293555, y: 2.224, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2054,6 +2065,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &338449601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2132,6 +2144,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &440210011
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2210,6 +2223,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &461979622
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2288,6 +2302,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &481284068
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2352,7 +2367,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -222.70007, y: 182.00012}
+  m_AnchoredPosition: {x: -252.89996, y: 263}
   m_SizeDelta: {x: 140, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486358724
@@ -2443,7 +2458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300036, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2513,6 +2528,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &496303851
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2591,6 +2607,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &508750132
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2800,6 +2817,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &603109945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2889,7 +2907,8 @@ MonoBehaviour:
     $0k'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2955,7 +2974,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 605740913}
   m_maskType: 0
 --- !u!23 &605740913
@@ -2978,7 +2997,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3052,6 +3071,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &617694347
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3268,6 +3288,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &661811795
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3372,6 +3393,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!1 &673619211
 GameObject:
   m_ObjectHideFlags: 0
@@ -3508,6 +3530,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &675792136
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3586,6 +3609,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &677352594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3773,6 +3797,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &713741819
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4141,6 +4166,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &717423344
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4219,6 +4245,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &747308208
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4297,6 +4324,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &784883176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4406,6 +4434,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &822156969
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4484,6 +4513,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &855312195
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4548,7 +4578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -82, y: 200}
+  m_AnchoredPosition: {x: -114, y: 263}
   m_SizeDelta: {x: 310, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &869192216
@@ -4639,7 +4669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300036, guid: 1eaee135ce037439d925cee5e41ce026, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4709,6 +4739,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &924493594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4925,6 +4956,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &933637407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5012,7 +5044,8 @@ MonoBehaviour:
   m_text: +0 required
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5078,7 +5111,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 965975959}
   m_maskType: 0
 --- !u!23 &965975959
@@ -5101,7 +5134,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5428,6 +5461,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1015583481
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5644,6 +5678,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1030480621
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5897,6 +5932,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1096814309
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5981,6 +6017,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1114920902
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6068,7 +6105,8 @@ MonoBehaviour:
   m_text: +0 required
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6134,7 +6172,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1139001101}
   m_maskType: 0
 --- !u!23 &1139001101
@@ -6157,7 +6195,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6233,7 +6271,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -6349,6 +6387,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1187255142
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6453,7 +6492,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1199323355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.21, y: 0, z: 0}
   m_LocalScale: {x: 3.2935548, y: 2.224, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6518,6 +6557,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1223753878
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6596,6 +6636,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1223973423
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6674,6 +6715,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1258436204
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6752,6 +6794,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1282040298
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6830,6 +6873,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1316367216
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6908,6 +6952,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1426354095
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7102,6 +7147,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1482978306
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7180,6 +7226,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1511168768
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7258,6 +7305,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1527455330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7336,6 +7384,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1551725468
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7552,6 +7601,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1581824114
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7630,6 +7680,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1640878655
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7708,6 +7759,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1648210673
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7786,6 +7838,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1657698852
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7957,7 +8010,8 @@ MonoBehaviour:
   m_text: +0 required
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8023,7 +8077,7 @@ MonoBehaviour:
   _SortingLayer: 0
   _SortingLayerID: 0
   _SortingOrder: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_renderer: {fileID: 1713820625}
   m_maskType: 0
 --- !u!23 &1713820625
@@ -8046,7 +8100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  - {fileID: 34953106349064779, guid: 079f6199aaa74474fa9686ebcdf9eb87, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -8120,6 +8174,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1723193138
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8283,6 +8338,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1752444731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8499,6 +8555,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1801198877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8653,6 +8710,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1844367712
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8731,6 +8789,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1865164370
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8809,6 +8868,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1891869050
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8887,6 +8947,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1895716724
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8965,6 +9026,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1903747603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9149,6 +9211,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1983269385
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9227,6 +9290,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &1995992822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9305,6 +9369,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &2024146182
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9514,6 +9579,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &2071775186
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9592,6 +9658,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &2075759880
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9670,6 +9737,7 @@ MonoBehaviour:
     tileName: 
     noded: 0
     nodeName: 
+    nodeInfluenced: 0
 --- !u!61 &2099609689
 BoxCollider2D:
   m_ObjectHideFlags: 0
