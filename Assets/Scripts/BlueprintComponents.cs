@@ -24,7 +24,7 @@ public class BlueprintComponents : MonoBehaviour
     private void Start()
     {
         //zoop();
-        throwaway.text = $"You are on level {GameObject.FindObjectOfType<TileInfoCollector>().currentLevel}.<br>Nice!";
+        throwaway.text = $"You are on level {GameObject.FindObjectOfType<TileInfoCollector>().currentLevel}.<br>Keep Going!";
 
         tIC = GameObject.Find("CodeMan").GetComponent<TileInfoCollector>();
 
