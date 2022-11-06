@@ -3559,7 +3559,7 @@ PrefabInstance:
     - target: {fileID: 6560358847773516402, guid: 167d022c50b884de19932ca7573e4251,
         type: 3}
       propertyPath: m_text
-      value: Ge the pipes connected!
+      value: Get those pipes connected!
       objectReference: {fileID: 0}
     - target: {fileID: 6560358849000314862, guid: 167d022c50b884de19932ca7573e4251,
         type: 3}
