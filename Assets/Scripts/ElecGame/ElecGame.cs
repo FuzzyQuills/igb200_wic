@@ -36,7 +36,7 @@ public class ElecGame : MonoBehaviour
     public TMP_Text starText;
     public Slider timeSlider;
     public float startingVoltage;
-    public float desiredVoltage;
+    public int desiredVoltage;
     public float finalVoltage;
     public float voltageTolerance;
     private bool voltageUpOrDown;
@@ -68,11 +68,19 @@ public class ElecGame : MonoBehaviour
         }
         if (c_tileInfoCollector)
         {
-            playTime -= c_tileInfoCollector.currentLevel;
+            if (c_tileInfoCollector.currentLevel <=7)
+            {
+                playTime -= c_tileInfoCollector.currentLevel;
+            }
+            else
+            {
+                playTime = 3;
+            }
+            
         }
 
-        desiredVoltage = Random.Range(6.0f, 20.0f);
-        startingVoltage = Random.Range(0, desiredVoltage / 3);
+        desiredVoltage = Random.Range(6, 20);
+        startingVoltage = Random.Range(0.1f, desiredVoltage / 3);
         startingVoltageLabel.text = string.Format("Starting Voltage: {0:0.00}", startingVoltage);
 
         // Compute voltage stride from desired voltage.
@@ -111,7 +119,7 @@ public class ElecGame : MonoBehaviour
             }
             layers.Add(newLayer);
         }
-        requiredVoltageText.text = $"VoltageReq:<br>{(int)desiredVoltage - voltageTolerance}V to {(int)desiredVoltage + voltageTolerance}V";
+        requiredVoltageText.text = $"VoltageReq:<br>{(desiredVoltage - voltageTolerance).ToString("F1")}V to {(desiredVoltage + voltageTolerance).ToString("F1")}V";
         currentTime = playTime;
     }
 
@@ -150,7 +158,7 @@ public class ElecGame : MonoBehaviour
 
         if (finalSwitch.IsOn)
         {
-            finalVoltage = (accumulatedVoltage > 0.0f ? startingVoltage + accumulatedVoltage : 0.0f);
+            finalVoltage = Mathf.FloorToInt(accumulatedVoltage > 0.0f ? startingVoltage + accumulatedVoltage : 0.0f);
 
 
             //if (finalVoltage > desiredVoltage + voltageTolerance) {
@@ -162,7 +170,7 @@ public class ElecGame : MonoBehaviour
             //}
 
             // test for win condition.
-            if (finalVoltage > (desiredVoltage - voltageTolerance) && finalVoltage < (desiredVoltage + voltageTolerance))
+            if (finalVoltage >= (Mathf.Floor(desiredVoltage - voltageTolerance)) && finalVoltage <= (Mathf.Ceil(desiredVoltage + voltageTolerance)))
             {
                 Debug.Log($"({desiredVoltage - voltageTolerance}) {finalVoltage} ({desiredVoltage + voltageTolerance})");
                 gameWon = true;
